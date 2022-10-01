@@ -2,5 +2,5 @@
 
 Thoughts on topics:
 
-* Programming & Languages
+* [Programming & Languages](prog-lang)
 * (Social) Network Analysis
