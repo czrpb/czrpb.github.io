@@ -1,6 +1,6 @@
 #!/bin/fish
 
-for f in learn dec101
+for f in learn dec101 dec102
     echo marp --html $f.md -o ../docs/prog-lang/decorators/$f.html
     marp --html $f.md -o ../docs/prog-lang/decorators/$f.html
     end
