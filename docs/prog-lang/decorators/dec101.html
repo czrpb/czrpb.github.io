@@ -392,7 +392,7 @@ footer {
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add1</span>(<span class="hljs-params">x</span>):
     <span class="hljs-keyword">return</span> x+<span class="hljs-number">1</span>
     
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">adfunc</span>(<span class="hljs-params">x</span>):
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">add2</span>(<span class="hljs-params">x</span>):
     <span class="hljs-keyword">return</span> add1(add1(x))
 
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">apply</span>(<span class="hljs-params">func, x</span>):
@@ -400,7 +400,7 @@ footer {
     
 <span class="hljs-meta">&gt;&gt;&gt; </span>apply(add1, <span class="hljs-number">7</span>)
 <span class="hljs-number">8</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>apply(adfunc, <span class="hljs-number">7</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>apply(add2, <span class="hljs-number">7</span>)
 <span class="hljs-number">9</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>apply(add1, apply(add1, <span class="hljs-number">7</span>))
 <span class="hljs-number">9</span>
@@ -536,15 +536,15 @@ footer {
 " lang="en-US" class="invert" data-marpit-pagination="9" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
 ;" data-marpit-pagination-total="16" data-size="16:9">
 <h3 id="decorator-double">Decorator: <code>double</code></h3>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
-
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
-    
-    result = x*<span class="hljs-number">2</span>
-    
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
-    
-    <span class="hljs-keyword">return</span> result
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-number">1</span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>      <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>      result = x*<span class="hljs-number">2</span>
+<span class="hljs-number">6</span>
+<span class="hljs-number">7</span>      <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
+<span class="hljs-number">8</span>
+<span class="hljs-number">9</span>      <span class="hljs-keyword">return</span> result
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
@@ -580,18 +580,18 @@ footer {
 " lang="en-US" class="invert" data-marpit-pagination="10" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
 ;" data-marpit-pagination-total="16" data-size="16:9">
 <h3 id="decorator-double-cont">Decorator: <code>double</code> cont</h3>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">_double</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
-    
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
-
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
-    
-    result = _double(x)
-    
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
-    
-    <span class="hljs-keyword">return</span> result
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-number">1</span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">_double</span>(<span class="hljs-params">x</span>):
+<span class="hljs-number">2</span>      <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>
+<span class="hljs-number">4</span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
+<span class="hljs-number">5</span>
+<span class="hljs-number">6</span>      <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
+<span class="hljs-number">7</span>
+<span class="hljs-number">8</span>      result = _double(x)
+<span class="hljs-number">9</span>
+<span class="hljs-number">10</span>     <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
+<span class="hljs-number">11</span>
+<span class="hljs-number">12</span>     <span class="hljs-keyword">return</span> result
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
@@ -627,18 +627,18 @@ footer {
 " lang="en-US" class="invert" data-marpit-pagination="11" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
 ;" data-marpit-pagination-total="16" data-size="16:9">
 <h3 id="decorator-double-cont-1">Decorator: <code>double</code> cont</h3>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">_double</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
-    
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x, func=_double</span>):
-
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
-    
-    result = func(x)
-    
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
-    
-    <span class="hljs-keyword">return</span> result
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-number">1</span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">_double</span>(<span class="hljs-params">x</span>):
+<span class="hljs-number">2</span>      <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>
+<span class="hljs-number">4</span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x, func=_double</span>):
+<span class="hljs-number">5</span>
+<span class="hljs-number">6</span>      <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
+<span class="hljs-number">7</span>
+<span class="hljs-number">8</span>      result = func(x)
+<span class="hljs-number">9</span>
+<span class="hljs-number">10</span>     <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
+<span class="hljs-number">11</span>
+<span class="hljs-number">12</span>     <span class="hljs-keyword">return</span> result
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
@@ -674,21 +674,22 @@ footer {
 " lang="en-US" class="invert" data-marpit-pagination="12" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
 ;" data-marpit-pagination-total="16" data-size="16:9">
 <h3 id="decorator-double-cont-2">Decorator: <code>double</code> cont</h3>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">_double</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
-    
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x, func=_double</span>):
-
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">x</span>):
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
-    
-        result = func(x)
-    
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
-    
-        <span class="hljs-keyword">return</span> result
-
-    <span class="hljs-keyword">return</span> wrapper(x)
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-number">1</span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">_double</span>(<span class="hljs-params">x</span>):
+<span class="hljs-number">2</span>      <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>
+<span class="hljs-number">4</span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x, func=_double</span>):
+<span class="hljs-number">5</span>
+<span class="hljs-number">6</span>      <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">x</span>):
+<span class="hljs-number">7</span>
+<span class="hljs-number">8</span>          <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
+<span class="hljs-number">9</span>
+<span class="hljs-number">10</span>         result = func(x)
+<span class="hljs-number">11</span>
+<span class="hljs-number">12</span>         <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
+<span class="hljs-number">13</span>
+<span class="hljs-number">14</span>         <span class="hljs-keyword">return</span> result
+<span class="hljs-number">15</span>
+<span class="hljs-number">16</span>     <span class="hljs-keyword">return</span> wrapper(x)
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
@@ -724,22 +725,23 @@ footer {
 " lang="en-US" class="invert" data-marpit-pagination="13" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
 ;" data-marpit-pagination-total="16" data-size="16:9">
 <h3 id="decorator-double-1">Decorator: <code>double</code> !!!</h3>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">debug</span>(<span class="hljs-params">func</span>):
-
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">x</span>):
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
-    
-        result = func(x)
-    
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
-    
-        <span class="hljs-keyword">return</span> result
-
-    <span class="hljs-keyword">return</span> wrapper
-
-<span class="hljs-meta">@debug</span>
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-number">1</span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">debug</span>(<span class="hljs-params">func</span>):
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>      <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">x</span>):
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>          <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
+<span class="hljs-number">6</span>
+<span class="hljs-number">7</span>          result = func(x)
+<span class="hljs-number">8</span>
+<span class="hljs-number">9</span>          <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
+<span class="hljs-number">10</span>
+<span class="hljs-number">11</span>         <span class="hljs-keyword">return</span> result
+<span class="hljs-number">12</span>
+<span class="hljs-number">13</span>     <span class="hljs-keyword">return</span> wrapper
+<span class="hljs-number">14</span>
+<span class="hljs-number">15</span> @debug
+<span class="hljs-number">16</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
+<span class="hljs-number">17</span>     <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
@@ -775,22 +777,23 @@ footer {
 " lang="en-US" class="invert" data-marpit-pagination="14" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
 ;" data-marpit-pagination-total="16" data-size="16:9">
 <h3 id="decorator-double-2">Decorator: <code>double</code></h3>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">debug</span>(<span class="hljs-params">func</span>):
-
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kw_args</span>):
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
-    
-        result = func(*args, **kw_args)
-    
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
-    
-        <span class="hljs-keyword">return</span> result
-
-    <span class="hljs-keyword">return</span> wrapper
-
-<span class="hljs-meta">@debug</span>
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-number">1</span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">debug</span>(<span class="hljs-params">func</span>):
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>      <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kw_args</span>):
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>          <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
+<span class="hljs-number">6</span>
+<span class="hljs-number">7</span>          result = func(*args, **kw_args)
+<span class="hljs-number">8</span>
+<span class="hljs-number">9</span>          <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
+<span class="hljs-number">10</span>
+<span class="hljs-number">11</span>         <span class="hljs-keyword">return</span> result
+<span class="hljs-number">12</span>
+<span class="hljs-number">13</span>     <span class="hljs-keyword">return</span> wrapper
+<span class="hljs-number">14</span>
+<span class="hljs-number">15</span> @debug
+<span class="hljs-number">16</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
+<span class="hljs-number">17</span>     <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
