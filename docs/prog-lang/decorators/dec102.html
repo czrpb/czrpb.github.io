@@ -182,6 +182,7 @@ footer {
 <ul>
 <li><span class="fa-solid fa-brain"> More Education!</span></li>
 <li><span class="fa-solid fa-laptop-code"> Practical Learning!</span></li>
+<li><span class="fa-solid fa-virus-covid"> Bug!</span></li>
 </ul>
 </li>
 </ul>
@@ -249,22 +250,29 @@ footer {
 " lang="en-US" class="invert" data-marpit-pagination="3" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
 ;" data-marpit-pagination-total="8" data-size="16:9">
 <h3 id="decorator-double">Decorator: <code>double</code></h3>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">debug</span>(<span class="hljs-params">func</span>):
-
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kw_args</span>):
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
-    
-        result = func(*args, **kw_args)
-    
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
-    
-        <span class="hljs-keyword">return</span> result
-
-    <span class="hljs-keyword">return</span> wrapper
-
-<span class="hljs-meta">@debug</span>
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-number">1</span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">debug</span>(<span class="hljs-params">func</span>):
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>      <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kw_args</span>):
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>          <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
+<span class="hljs-number">6</span>
+<span class="hljs-number">7</span>          result = func(*args, **kw_args)
+<span class="hljs-number">8</span>
+<span class="hljs-number">9</span>          <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
+<span class="hljs-number">10</span>
+<span class="hljs-number">11</span>         <span class="hljs-keyword">return</span> result
+<span class="hljs-number">12</span>
+<span class="hljs-number">13</span>     <span class="hljs-keyword">return</span> wrapper
+<span class="hljs-number">14</span>
+<span class="hljs-number">15</span> @debug
+<span class="hljs-number">16</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
+<span class="hljs-number">17</span>     <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
+<span class="hljs-number">18</span>
+<span class="hljs-number">19</span>
+<span class="hljs-number">20</span>
+<span class="hljs-number">21</span>
+<span class="hljs-number">22</span>
+<span class="hljs-number">23</span>
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
@@ -299,25 +307,30 @@ footer {
 }
 " lang="en-US" class="invert" data-marpit-pagination="4" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
 ;" data-marpit-pagination-total="8" data-size="16:9">
-<h3 id="decorator-double-1">Decorator: <code>double</code></h3>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">debug</span>(<span class="hljs-params">func, debug=<span class="hljs-literal">False</span></span>):
-
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kw_args</span>):
-        <span class="hljs-keyword">if</span> debug:
-            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
-    
-        result = func(*args, **kw_args)
-
-        <span class="hljs-keyword">if</span> debug:
-            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
-    
-        <span class="hljs-keyword">return</span> result
-
-    <span class="hljs-keyword">return</span> wrapper
-
-<span class="hljs-meta">@debug</span>
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
+<h3 id="decorator-double-cont">Decorator: <code>double</code> cont</h3>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-number">1</span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">debug</span>(<span class="hljs-params">func, debug=<span class="hljs-literal">False</span></span>):
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>      <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kw_args</span>):
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>          <span class="hljs-keyword">if</span> debug:
+<span class="hljs-number">6</span>              <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
+<span class="hljs-number">7</span>
+<span class="hljs-number">8</span>          result = func(*args, **kw_args)
+<span class="hljs-number">9</span>
+<span class="hljs-number">10</span>         <span class="hljs-keyword">if</span> debug:
+<span class="hljs-number">11</span>             <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
+<span class="hljs-number">12</span>
+<span class="hljs-number">13</span>         <span class="hljs-keyword">return</span> result
+<span class="hljs-number">14</span>
+<span class="hljs-number">15</span>     <span class="hljs-keyword">return</span> wrapper
+<span class="hljs-number">16</span>
+<span class="hljs-number">17</span> @debug
+<span class="hljs-number">18</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
+<span class="hljs-number">19</span>     <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
+<span class="hljs-number">20</span>
+<span class="hljs-number">21</span>
+<span class="hljs-number">22</span>
+<span class="hljs-number">23</span>
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
@@ -352,25 +365,30 @@ footer {
 }
 " lang="en-US" class="invert" data-marpit-pagination="5" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
 ;" data-marpit-pagination-total="8" data-size="16:9">
-<h3 id="decorator-double-2">Decorator: <code>double</code> !!!</h3>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">debug</span>(<span class="hljs-params">func, debug=<span class="hljs-literal">False</span></span>):
-
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kw_args</span>):
-        <span class="hljs-keyword">if</span> debug:
-            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
-    
-        result = func(*args, **kw_args)
-
-        <span class="hljs-keyword">if</span> debug:
-            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
-    
-        <span class="hljs-keyword">return</span> result
-
-    <span class="hljs-keyword">return</span> wrapper
-
-<span class="hljs-meta">@debug(<span class="hljs-params"><span class="hljs-literal">True</span></span>)</span>
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
+<h3 id="decorator-double-span-classfa-solid-fa-virus-covid-span">Decorator: <code>double</code> <span class="fa-solid fa-virus-covid"> </span></h3>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-number">1</span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">debug</span>(<span class="hljs-params">func, debug=<span class="hljs-literal">False</span></span>):
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>      <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kw_args</span>):
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>          <span class="hljs-keyword">if</span> debug:
+<span class="hljs-number">6</span>              <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
+<span class="hljs-number">7</span>
+<span class="hljs-number">8</span>          result = func(*args, **kw_args)
+<span class="hljs-number">9</span>
+<span class="hljs-number">10</span>         <span class="hljs-keyword">if</span> debug:
+<span class="hljs-number">11</span>             <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
+<span class="hljs-number">12</span>
+<span class="hljs-number">13</span>         <span class="hljs-keyword">return</span> result
+<span class="hljs-number">14</span>
+<span class="hljs-number">15</span>     <span class="hljs-keyword">return</span> wrapper
+<span class="hljs-number">16</span>
+<span class="hljs-number">17</span> @debug(debug=<span class="hljs-literal">True</span>)
+<span class="hljs-number">18</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
+<span class="hljs-number">19</span>     <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
+<span class="hljs-number">20</span>
+<span class="hljs-number">21</span>
+<span class="hljs-number">22</span>
+<span class="hljs-number">23</span>
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
@@ -405,29 +423,30 @@ footer {
 }
 " lang="en-US" class="invert" data-marpit-pagination="6" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
 ;" data-marpit-pagination-total="8" data-size="16:9">
-<h3 id="decorator-double-3">Decorator: <code>double</code></h3>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">debug</span>(<span class="hljs-params">debug=<span class="hljs-literal">False</span></span>):
-
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">decorator</span>(<span class="hljs-params">func</span>):
-
-        <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kw_args</span>):
-            <span class="hljs-keyword">if</span> debug:
-                <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
-
-            result = func(*args, **kw_args)
-
-            <span class="hljs-keyword">if</span> debug:
-                <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
-
-            <span class="hljs-keyword">return</span> result
-
-        <span class="hljs-keyword">return</span> wrapper
-
-    <span class="hljs-keyword">return</span> decorator
-	
-<span class="hljs-meta">@debug(<span class="hljs-params"><span class="hljs-literal">True</span></span>)</span>
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
+<h3 id="decorator-double-final">Decorator: <code>double</code> final</h3>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-number">1</span>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">debug</span>(<span class="hljs-params">debug=<span class="hljs-literal">False</span></span>):
+<span class="hljs-number">2</span>
+<span class="hljs-number">3</span>      <span class="hljs-keyword">def</span> <span class="hljs-title function_">decorator</span>(<span class="hljs-params">func</span>):
+<span class="hljs-number">4</span>
+<span class="hljs-number">5</span>          <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kw_args</span>):
+<span class="hljs-number">6</span>
+<span class="hljs-number">7</span>              <span class="hljs-keyword">if</span> debug:
+<span class="hljs-number">8</span>                  <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Doubling ...&quot;</span>)
+<span class="hljs-number">9</span>
+<span class="hljs-number">10</span>             result = func(*args, **kw_args)
+<span class="hljs-number">11</span>
+<span class="hljs-number">12</span>             <span class="hljs-keyword">if</span> debug:
+<span class="hljs-number">13</span>                 <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;\tDone doubling: <span class="hljs-subst">{result}</span>&quot;</span>)
+<span class="hljs-number">14</span>
+<span class="hljs-number">15</span>             <span class="hljs-keyword">return</span> result
+<span class="hljs-number">16</span>
+<span class="hljs-number">17</span>         <span class="hljs-keyword">return</span> wrapper
+<span class="hljs-number">18</span>
+<span class="hljs-number">19</span>     <span class="hljs-keyword">return</span> decorator
+<span class="hljs-number">20</span>
+<span class="hljs-number">21</span> @debug(<span class="hljs-literal">True</span>)
+<span class="hljs-number">22</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">double</span>(<span class="hljs-params">x</span>):
+<span class="hljs-number">23</span>     <span class="hljs-keyword">return</span> x*<span class="hljs-number">2</span>
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
