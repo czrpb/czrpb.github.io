@@ -1,0 +1,129 @@
+@startuml
+skinparam defaultTextAlignment center
+skinparam shadowing false
+skinparam package {
+    borderColor #555555
+    backgroundColor #EFEFFF
+    fontColor #333333
+    stereotypeFontColor #333333
+}
+skinparam rectangle {
+    borderColor #0077BB
+    backgroundColor #AADDFF
+    fontColor #000000
+    stereotypeFontColor #003366
+}
+skinparam card {
+    borderColor #009973
+    backgroundColor #C6F1E7
+    fontColor #000000
+    stereotypeFontColor #004D33
+}
+
+title DEC101: Function & Decorator Foundations - Skills and Concepts Tree
+
+package "Concepts (DEC101)" <<Concepts>> {
+    rectangle C101_Function [
+        <b>C101: Function</b>
+        (Input, Logic, Output)
+    ]
+    rectangle C101_def_Statement [
+        <b>C101: 'def' Statement</b>
+        Syntax & Usage
+    ]
+    rectangle C101_lambda_Expression [
+        <b>C101: 'lambda' Expression</b>
+        Syntax & Usage
+    ]
+    rectangle C101_Function_as_Value [
+        <b>C101: Function as Value</b>
+        First-class citizens,
+        passable, referencable
+    ]
+    rectangle C101_Decorator_Concept_Basic [
+        <b>C101: Basic Decorator Concept</b>
+        Function "surrounds" / augments
+        another function's behavior
+    ]
+    rectangle C_Python_Args_Kwargs [
+        <b>C: *args & **kwargs</b>
+        (For generic wrappers)
+    ]
+}
+
+package "Skills (DEC101)" <<Skills>> {
+    card S101_Define_Function_def [
+        <b>S101: Define Function (def)</b>
+        Use 'def' syntax
+    ]
+    card S101_Define_Function_lambda [
+        <b>S101: Define Function (lambda)</b>
+        Use 'lambda' syntax
+    ]
+    card S101_Pass_Function_as_Argument [
+        <b>S101: Pass Function as Argument</b>
+        e.g., apply(func, x)
+    ]
+    card S101_Define_Nested_Function [
+        <b>S101: Define Nested Function</b>
+        (Inner functions)
+    ]
+    card S101_Return_Function_from_Function [
+        <b>S101: Return Function from Function</b>
+        (Higher-order functions)
+    ]
+    card S101_Write_Basic_Wrapper_Function [
+        <b>S101: Write Basic Wrapper Function</b>
+        (e.g., wrapper(x) in examples)
+    ]
+    card S101_Write_Generic_Wrapper_Function [
+        <b>S101: Write Generic Wrapper</b>
+        Handles *args, **kwargs
+    ]
+    card S101_Create_Simple_Decorator [
+        <b>S101: Create Simple Decorator</b>
+        (Function taking a func, returning a wrapper)
+    ]
+    card S101_Apply_Simple_Decorator [
+        <b>S101: Apply Simple Decorator</b>
+        Using '@' syntax
+    ]
+}
+
+' --- Concept Dependencies ---
+C101_def_Statement --> C101_Function
+C101_lambda_Expression --> C101_Function
+C101_Function_as_Value --> C101_Function
+C101_Decorator_Concept_Basic --> C101_Function_as_Value
+' Decorators often need to handle arbitrary args
+C101_Decorator_Concept_Basic --> C_Python_Args_Kwargs
+
+' --- Skill Dependencies & Skill-Concept Connections (DEC101) ---
+S101_Define_Function_def ..> C101_def_Statement : requires
+S101_Define_Function_lambda ..> C101_lambda_Expression : requires
+
+' S101_Pass_Function_as_Argument can depend on S101_Define_Function_def or S101_Define_Function_lambda
+S101_Pass_Function_as_Argument --> S101_Define_Function_def
+S101_Pass_Function_as_Argument ..> C101_Function_as_Value : requires
+
+S101_Define_Nested_Function --> S101_Define_Function_def
+
+S101_Return_Function_from_Function --> S101_Define_Nested_Function
+S101_Return_Function_from_Function ..> C101_Function_as_Value : requires
+
+S101_Write_Basic_Wrapper_Function --> S101_Define_Nested_Function
+S101_Write_Generic_Wrapper_Function --> S101_Write_Basic_Wrapper_Function
+S101_Write_Generic_Wrapper_Function ..> C_Python_Args_Kwargs : requires
+
+S101_Create_Simple_Decorator --> S101_Return_Function_from_Function
+' S101_Create_Simple_Decorator can use Basic_Wrapper or Generic_Wrapper
+S101_Create_Simple_Decorator --> S101_Write_Generic_Wrapper_Function
+S101_Create_Simple_Decorator ..> C101_Decorator_Concept_Basic : requires
+
+S101_Apply_Simple_Decorator --> S101_Create_Simple_Decorator
+
+note bottom
+  Diagram for dec101.md.
+  Focuses on foundational concepts and skills for basic decorators.
+end note
+@enduml

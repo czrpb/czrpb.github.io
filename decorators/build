@@ -3,6 +3,11 @@
 for f in learn dec101 dec102 dec103
     echo marp --html $f.md -o ../docs/prog-lang/decorators/$f.html
     marp --html $f.md -o ../docs/prog-lang/decorators/$f.html
-    end
 
-tar vzcf dec.tar.gz build learn.md dec101.md dec102.md
+    if test -e $f.puml
+        echo plantuml -tpng $f.puml
+        plantuml -tpng $f.puml
+    end
+end
+
+tar vzcf dec.tar.gz build *.md *.puml *.png
