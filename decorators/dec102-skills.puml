@@ -1,0 +1,29 @@
+@startmindmap
+title Decorators 102 - Skills Tree
+
+* **Decorators 102: Overall Skill**
+**_ Implement more robust and practical decorators, including stateful and chained decorators._**
+
+** Module 1: Preserving Function Metadata
+*** Use `functools.wraps` within a decorator definition [6]
+*** Inspect function metadata (e.g., `__name__`, `__doc__`) before and after decoration
+*** Articulate the importance of metadata preservation
+
+** Module 2: Stateful Decorators
+*** Create a stateful decorator using a closure
+**** (e.g., by attaching state as an attribute to the wrapper function)
+*** (Introduction) Create a basic stateful decorator using a class
+**** Implement `__init__` to store the decorated function and initial state
+**** Implement `__call__` to manage state and call the original function [11, 12]
+
+** Module 3: Common Decorator Use Cases - Part 1
+*** Implement a decorator to time function execution [5, 6]
+*** Implement a decorator for basic logging of function calls/arguments [6, 13]
+*** Implement a decorator to slow down code execution (e.g., add a delay) [5]
+
+** Module 4: Chaining Decorators
+*** Apply multiple decorators to a single function using stacked `@` syntax [6, 9]
+*** Predict the order of decorator application (definition time)
+*** Predict the order of wrapper execution (call time) for chained decorators [6]
+
+@endmindmap

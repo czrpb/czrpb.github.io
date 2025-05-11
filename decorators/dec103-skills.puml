@@ -1,0 +1,38 @@
+@startmindmap
+title Decorators 103 - Skills Tree
+
+* **Decorators 103: Overall Skill**
+**_ Master advanced decorator patterns, including parameterization, class-based decorators, and decorating methods/classes, for complex applications._**
+
+** Module 1: Decorators with Arguments (Parameterized Decorators)
+*** Create a decorator factory function that accepts arguments [10, 14]
+**** The factory returns the actual decorator function
+*** Use a parameterized decorator by providing arguments in the `@decorator_name(args)` syntax
+*** Implement the three levels of functions: factory, decorator, wrapper
+
+** Module 2: Class Decorators In-Depth
+*** Implement a class decorator using `__init__` (to receive the function) and `__call__` (to act as the wrapper) [11, 12]
+*** Manage state within a class decorator using instance attributes (`self.attribute`) [11, 12]
+*** Implement a class decorator that accepts arguments
+**** `__init__` receives decorator arguments
+**** `__call__` receives the function to be decorated and returns the wrapper [11]
+*** Use `functools.update_wrapper` or `functools.wraps` appropriately with class decorators [11]
+
+** Module 3: Decorating Methods and Classes
+*** Decorate instance methods within a class
+**** Ensure the wrapper correctly handles the `self` argument [3, 4]
+*** Use built-in decorators: `@staticmethod`, `@classmethod`, `@property` [3, 4]
+*** Decorate an entire class
+**** Modify the class (e.g., add attributes/methods)
+**** Wrap the class (e.g., control instantiation or behavior) [4]
+
+** Module 4: Advanced Decorator Use Cases - Part 2
+*** Implement a memoization/caching decorator [13]
+*** Implement a conceptual authentication/authorization decorator [6, 13]
+*** Implement a conceptual rate-limiting decorator [13]
+*** Implement a conceptual plugin registration decorator [9]
+
+** Module 5: Exploring the Descriptor Protocol (Optional)
+*** (Conceptual) Relate descriptor methods (`__get__`, `__set__`, `__delete__`) to the behavior of `@property`
+
+@endmindmap

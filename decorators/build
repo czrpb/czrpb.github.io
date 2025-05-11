@@ -2,6 +2,9 @@
 
 rm *~
 
+cp -av README.md ../docs/prog-lang/decorators/
+echo ""
+
 echo "Generate MARP and puml files...."
 for f in learn dec101 dec102 dec103
     echo marp --html $f.md -o ../docs/prog-lang/decorators/$f.html
@@ -19,9 +22,9 @@ echo "Generate puml for any skills and concept files...."
 for f in *skill*.puml *concept*.puml
     echo plantuml -tpng $f
     plantuml -tpng $f
-    cp -av $f.png ../docs/prog-lang/decorators/
+    cp -av (echo $f | sed s/.puml//).png ../docs/prog-lang/decorators/
 end
 
 echo ""
 echo "tar up files...."
-tar vzcf dec.tar.gz build *.md *.puml *.png
+tar vzcf dec.tar.gz build *.pdf *.md *.puml *.png

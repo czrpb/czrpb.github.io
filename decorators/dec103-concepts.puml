@@ -1,0 +1,51 @@
+@startmindmap
+title Decorators 103 - Concepts Tree
+
+* **Decorators 103: Overall Conceptual Understanding**
+**_ Comprehend advanced decorator patterns for sophisticated control and abstraction in Python._**
+
+** Module 1: Decorators with Arguments (Parameterized Decorators)
+*** Concept: Decorator Factory Pattern [14]
+**** A function that returns a decorator
+*** Concept: Higher-Order Functions (Revisited)
+**** Three levels of nesting: Factory -> Decorator -> Wrapper
+
+** Module 2: Class Decorators In-Depth
+*** Concept: Class as Decorator [11, 12]
+**** Using `__init__` and `__call__` to mimic function decorator behavior
+*** Concept: Object-Oriented Decorator Design
+**** Encapsulating decorator logic and state within a class
+*** Concept: `functools.update_wrapper` [11]
+**** For copying metadata to class decorator instances
+
+** Module 3: Decorating Methods and Classes
+*** Concept: Instance Method
+**** Bound to an instance (`self`)
+*** Concept: Static Method (`@staticmethod`) [3, 4]
+**** Not bound to instance or class
+*** Concept: Class Method (`@classmethod`) [3, 4]
+**** Bound to the class (`cls`)
+*** Concept: Property (`@property`) [3, 4]
+**** Accessing methods like attributes (getter, setter, deleter)
+*** Concept: Class as a Modifiable Object
+**** Decorators can alter class definitions
+
+** Module 4: Advanced Decorator Use Cases - Part 2
+*** Concept: Memoization / Caching [13]
+**** Storing results of expensive function calls
+*** Concept: Authentication / Authorization [6, 13]
+**** Controlling access to resources/functionality
+*** Concept: Rate Limiting [13]
+**** Controlling frequency of function calls
+*** Concept: Plugin Architecture / Registry [9]
+**** Dynamically discovering and managing components
+
+** Module 5: Exploring the Descriptor Protocol (Optional)
+*** Concept: Descriptor Protocol
+**** `__get__()`, `__set__()`, `__delete__()` methods
+*** Concept: Binding Behavior
+**** How attribute access can be customized
+*** Concept: Python Object Model (Deeper Dive)
+**** Understanding underlying mechanisms of Python features like `@property`
+
+@endmindmap
