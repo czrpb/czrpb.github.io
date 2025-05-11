@@ -1,0 +1,43 @@
+@startmindmap
+title Decorators 101 - Concepts Tree
+
+* **Decorators 101: Overall Conceptual Understanding**
+**_ Grasp the nature of functions in Python and the basic mechanics of decorators._**
+
+** Module 1: Python Functions as First-Class Objects
+*** Concept: First-Class Citizen / First-Class Object [1, 2]
+**** Functions can be treated like any other data type (assigned, passed, returned)
+*** Concept: Function as an Object [1, 2]
+*** Concept: Higher-Order Function (Definition) [3, 4]
+**** Functions that operate on other functions
+*** Concept: Inner Functions / Nested Functions [5, 6]
+*** Concept: Lexical Scope (Implicit Introduction)
+
+** Module 2: Understanding Closures
+*** Concept: Closure [6, 7, 8]
+**** Function + Enclosing Environment
+**** Remembering values from enclosing scope
+*** Concept: Lexical Scoping / Enclosing Scope (Reinforced) [7]
+*** Concept: Free Variables [7]
+**** Variables referenced by inner function but defined in outer scope
+
+** Module 3: Introduction to Decorators
+*** Concept: Decorator (Definition) [4, 5, 9]
+**** Modifying/extending function behavior
+*** Concept: Wrapper Function [6, 10]
+**** The function that "wraps" the original
+*** Concept: Syntactic Sugar (`@` symbol) [5, 6]
+**** Convenience for `func = decorator(func)`
+*** Concept: Metaprogramming (Basic Idea) [4]
+**** Code that manipulates other code
+
+** Module 4: Decorating Functions With Arguments
+*** Concept: Arbitrary Argument Lists
+**** `*args` (Tuple of positional arguments)
+**** `**kwargs` (Dictionary of keyword arguments)
+
+** Module 5: Returning Values From Decorated Functions
+*** Concept: Function Return Values
+**** Importance of propagating results through decorators
+
+@endmindmap

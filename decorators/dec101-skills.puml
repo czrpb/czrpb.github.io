@@ -1,0 +1,33 @@
+@startmindmap
+title Decorators 101 - Skills Tree
+
+* **Decorators 101: Overall Skill**
+**_ Understand and apply foundational concepts for creating basic Python decorators._**
+
+** Module 1: Python Functions as First-Class Objects
+*** Assign functions to variables
+*** Define inner functions (nested functions)
+*** Pass functions as arguments to other functions
+**** Identify and use higher-order functions (introductory level)
+*** Return functions from other functions
+
+** Module 2: Understanding Closures
+*** Identify free variables in a nested function context
+*** Create a simple closure
+*** Utilize a closure to retain access to an enclosing scope's variables
+
+** Module 3: Introduction to Decorators
+*** Define a basic decorator function (wrapper pattern)
+*** Apply a decorator to a function manually (e.g., `func = decorator(func)`)
+*** Use the `@` syntax to apply a decorator
+
+** Module 4: Decorating Functions With Arguments
+*** Implement wrapper functions that accept arbitrary positional arguments (`*args`)
+*** Implement wrapper functions that accept arbitrary keyword arguments (`**kwargs`)
+*** Pass `*args` and `**kwargs` from the wrapper to the decorated function
+
+** Module 5: Returning Values From Decorated Functions
+*** Ensure the wrapper function captures the return value of the decorated function
+*** Ensure the wrapper function returns the captured value
+
+@endmindmap

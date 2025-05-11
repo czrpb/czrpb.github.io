@@ -1,0 +1,113 @@
+@startuml
+skinparam defaultTextAlignment center
+skinparam shadowing false
+skinparam package {
+    borderColor #555555
+    backgroundColor #EFFFშF  /' correction: using a generic light green for safety #EFEFEF '/
+    fontColor #333333
+    stereotypeFontColor #333333
+}
+skinparam rectangle {
+    borderColor #0077BB
+    backgroundColor #AADDFF
+    fontColor #000000
+    stereotypeFontColor #003366
+}
+skinparam card {
+    borderColor #009973
+    backgroundColor #C6F1E7
+    fontColor #000000
+    stereotypeFontColor #004D33
+}
+
+title DEC102: Dynamic Decorators (with Arguments) - Skills and Concepts Tree
+
+package "Prerequisite Concepts (from DEC101)" <<Concepts>> {
+    rectangle C101_Decorator_Concept_Basic [
+        <b>C101: Basic Decorator Concept</b>
+        (Assumed Prerequisite)
+    ]
+    rectangle C101_Function_as_Value [
+        <b>C101: Function as Value</b>
+        (Assumed Prerequisite)
+    ]
+}
+
+package "Concepts (DEC102)" <<Concepts>> {
+    rectangle C102_Decorator_Arguments [
+        <b>C102: Decorator Arguments</b>
+        Passing arguments to
+        the decorator factory
+    ]
+    rectangle C102_Decorator_Factory_Pattern [
+        <b>C102: Decorator Factory Pattern</b>
+        A function that returns
+        the actual decorator
+    ]
+}
+
+package "Prerequisite Skills (from DEC101)" <<Skills>> {
+     card S101_Create_Simple_Decorator [
+        <b>S101: Create Simple Decorator</b>
+        (Assumed Prerequisite)
+    ]
+    card S101_Write_Generic_Wrapper_Function [
+        <b>S101: Write Generic Wrapper</b>
+        (Assumed Prerequisite)
+    ]
+    card S101_Return_Function_from_Function [
+        <b>S101: Return Function</b>
+        (Assumed Prerequisite)
+    ]
+}
+
+package "Skills (DEC102)" <<Skills>> {
+    card S102_Define_Decorator_Factory [
+        <b>S102: Define Decorator Factory</b>
+        Outer function accepting params,
+        returning the decorator function
+    ]
+    card S102_Access_Factory_Args_In_Decorator [
+        <b>S102: Access Factory Args in Decorator</b>
+        Decorator (and its wrapper) uses
+        variables from factory's scope (closure)
+    ]
+    card S102_Create_Decorator_With_Arguments [
+        <b>S102: Create Decorator With Arguments</b>
+        Combining factory and decorator logic
+        (e.g., debug(debug=True))
+    ]
+    card S102_Apply_Decorator_With_Arguments [
+        <b>S102: Apply Decorator With Arguments</b>
+        Using '@decorator_name(args)' syntax
+    ]
+}
+
+' --- Concept Dependencies ---
+C102_Decorator_Arguments --> C101_Decorator_Concept_Basic
+C102_Decorator_Factory_Pattern --> C102_Decorator_Arguments
+' Higher-order nature
+C102_Decorator_Factory_Pattern --> C101_Function_as_Value
+
+' --- Skill Dependencies & Skill-Concept Connections (DEC102) ---
+S102_Define_Decorator_Factory ..> C102_Decorator_Factory_Pattern : requires
+' Factory returns the decorator
+S102_Define_Decorator_Factory --> S101_Return_Function_from_Function
+
+S102_Access_Factory_Args_In_Decorator --> S102_Define_Decorator_Factory
+' Wrapper is inside the decorator
+S102_Access_Factory_Args_In_Decorator --> S101_Write_Generic_Wrapper_Function
+
+S102_Create_Decorator_With_Arguments --> S102_Define_Decorator_Factory
+S102_Create_Decorator_With_Arguments --> S102_Access_Factory_Args_In_Decorator
+' Evolves from this structure
+S102_Create_Decorator_With_Arguments --> S101_Create_Simple_Decorator
+
+S102_Apply_Decorator_With_Arguments --> S102_Create_Decorator_With_Arguments
+S102_Apply_Decorator_With_Arguments ..> C102_Decorator_Arguments : applies this concept
+
+note bottom
+  Diagram for dec102.md.
+  Focuses on decorators that accept arguments (decorator factories).
+end note
+@enduml

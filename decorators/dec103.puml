@@ -1,0 +1,196 @@
+@startuml
+skinparam defaultTextAlignment center
+skinparam shadowing false
+skinparam package {
+    borderColor #555555
+    backgroundColor #FFEfEf
+    fontColor #333333
+    stereotypeFontColor #333333
+}
+skinparam rectangle {
+    borderColor #0077BB
+    backgroundColor #AADDFF
+    fontColor #000000
+    stereotypeFontColor #003366
+}
+skinparam card {
+    borderColor #009973
+    backgroundColor #C6F1E7
+    fontColor #000000
+    stereotypeFontColor #004D33
+}
+
+title DEC103: Advanced Decorator Patterns - Skills and Concepts Tree
+
+package "Prerequisite Concepts" <<Concepts>> {
+    rectangle C101_Decorator_Concept_Basic [
+        <b>C101: Basic Decorator Concept</b>
+        (Assumed Prerequisite)
+    ]
+    rectangle C102_Decorator_Arguments [
+        <b>C102: Decorator Arguments</b>
+        (Assumed Prerequisite)
+    ]
+    rectangle C_Python_Classes_Methods [
+        <b>C: Python Classes & Methods</b>
+        (General Prerequisite)
+    ]
+    rectangle C_Python_Context_Managers_Lib [
+        <b>C: Python Context Managers</b>
+        (Incl. `contextlib`)
+    ]
+    rectangle C_Functools_Wraps [
+        <b>C: functools.wraps</b>
+        (Preserving metadata)
+    ]
+}
+
+package "Concepts (DEC103)" <<Concepts>> {
+    rectangle C103_Class_Decorator [
+        <b>C103: Class Decorator</b>
+        Function modifying/replacing a class
+    ]
+    rectangle C103_Context_Manager_As_Decorator [
+        <b>C103: Context Manager as Decorator</b>
+        Using `@contextlib.contextmanager`
+    ]
+    rectangle C103_Method_Decorator [
+        <b>C103: Method Decorator</b>
+        Decorator for class methods
+        (often stateful via class instance)
+    ]
+    rectangle C103_Stateful_Decorator [
+        <b>C103: Stateful Decorator</b>
+        Decorator instance retains state
+        (e.g., cache, call counts)
+    ]
+    rectangle C103_RealWorld_Rate_Limiter [
+        <b>C103: Rate Limiter Application</b>
+        (Example of stateful decorator with args)
+    ]
+    rectangle C103_LRU_Cache [
+        <b>C103: LRU Cache Concept</b>
+        (For lab and method decorator example)
+    ]
+}
+
+package "Prerequisite Skills" <<Skills>> {
+    card S101_Create_Simple_Decorator [
+        <b>S101: Create Simple Decorator</b>
+        (Assumed Prerequisite)
+    ]
+    card S102_Create_Decorator_With_Arguments [
+        <b>S102: Create Decorator With Arguments</b>
+        (Assumed Prerequisite)
+    ]
+}
+
+package "Skills (DEC103)" <<Skills>> {
+    card S103_Create_Class_Decorator_Func [
+        <b>S103: Create Class Decorator (Function)</b>
+        Takes class, returns modified/new class
+    ]
+    card S103_Apply_Class_Decorator [
+        <b>S103: Apply Class Decorator</b>
+        `@decorator class MyClass:`
+    ]
+    card S103_Create_Decorator_Using_Contextlib [
+        <b>S103: Create Decorator (contextlib)</b>
+        `@contextlib.contextmanager`
+    ]
+    card S103_Apply_Context_Manager_Decorator [
+        <b>S103: Apply Context Manager Decorator</b>
+        `@my_context_decorator()`
+    ]
+    card S103_Create_Method_Decorator_As_Class [
+        <b>S103: Create Method Decorator (Class)</b>
+        With `__init__` (for func) and `__call__`
+    ]
+    card S103_Apply_Method_Decorator [
+        <b>S103: Apply Method Decorator</b>
+        `@MyDecoratorClass method_name`
+    ]
+    card S103_Implement_Stateful_Decorator_Instance [
+        <b>S103: Implement Stateful Decorator</b>
+        (e.g., Cache class, rate_limit calls list)
+    ]
+    card S103_Use_Functools_Wraps_Effectively [
+        <b>S103: Use functools.wraps</b>
+        In wrapper for metadata preservation
+    ]
+    card S103_Implement_API_Rate_Limiter_Decorator [
+        <b>S103: Implement Rate Limiter</b>
+        (Complex stateful decorator example)
+    ]
+
+    package "Lab Skills (DEC103)" <<Lab>> {
+        card S103_Lab_Measure_Execution_Time [
+            <b>S103_Lab: Measure Execution Time</b>
+        ]
+        card S103_Lab_Log_Args_Return_Values [
+            <b>S103_Lab: Log Args & Return</b>
+        ]
+        card S103_Lab_Implement_Error_Retry [
+            <b>S103_Lab: Implement Error Handling & Retry</b>
+        ]
+        card S103_Lab_Implement_LRU_Cache_Feature [
+            <b>S103_Lab: Implement LRU Cache</b>
+        ]
+        card S103_Lab_Combine_Features_In_Decorator [
+            <b>S103_Lab: Combine Features in One Decorator</b>
+        ]
+    }
+}
+
+' --- Concept Dependencies ---
+C103_Class_Decorator --> C101_Decorator_Concept_Basic
+C103_Class_Decorator --> C_Python_Classes_Methods
+C103_Context_Manager_As_Decorator --> C101_Decorator_Concept_Basic
+C103_Context_Manager_As_Decorator --> C_Python_Context_Managers_Lib
+C103_Method_Decorator --> C101_Decorator_Concept_Basic
+C103_Method_Decorator --> C_Python_Classes_Methods
+C103_Stateful_Decorator --> C101_Decorator_Concept_Basic
+C103_RealWorld_Rate_Limiter --> C103_Stateful_Decorator
+C103_RealWorld_Rate_Limiter --> C102_Decorator_Arguments
+' Cache is stateful
+C103_LRU_Cache --> C103_Stateful_Decorator
+
+' --- Skill Dependencies & Skill-Concept Connections (DEC103) ---
+S103_Create_Class_Decorator_Func ..> C103_Class_Decorator : requires
+' Base structure
+S103_Create_Class_Decorator_Func --> S101_Create_Simple_Decorator
+S103_Apply_Class_Decorator --> S103_Create_Class_Decorator_Func
+
+S103_Create_Decorator_Using_Contextlib ..> C103_Context_Manager_As_Decorator : requires
+S103_Apply_Context_Manager_Decorator --> S103_Create_Decorator_Using_Contextlib
+
+S103_Create_Method_Decorator_As_Class ..> C103_Method_Decorator : requires
+' if cache etc.
+S103_Create_Method_Decorator_As_Class ..> C103_Stateful_Decorator
+S103_Apply_Method_Decorator --> S103_Create_Method_Decorator_As_Class
+
+S103_Implement_Stateful_Decorator_Instance ..> C103_Stateful_Decorator : requires
+' Or func decorator
+S103_Implement_Stateful_Decorator_Instance --> S103_Create_Method_Decorator_As_Class
+
+S103_Use_Functools_Wraps_Effectively ..> C_Functools_Wraps : requires
+
+S103_Implement_API_Rate_Limiter_Decorator --> S102_Create_Decorator_With_Arguments
+S103_Implement_API_Rate_Limiter_Decorator --> S103_Implement_Stateful_Decorator_Instance
+S103_Implement_API_Rate_Limiter_Decorator --> S103_Use_Functools_Wraps_Effectively
+S103_Implement_API_Rate_Limiter_Decorator ..> C103_RealWorld_Rate_Limiter : implements
+
+' Lab Skill Dependencies
+S103_Lab_Combine_Features_In_Decorator --> S103_Lab_Measure_Execution_Time
+S103_Lab_Combine_Features_In_Decorator --> S103_Lab_Log_Args_Return_Values
+S103_Lab_Combine_Features_In_Decorator --> S103_Lab_Implement_Error_Retry
+S103_Lab_Combine_Features_In_Decorator --> S103_Lab_Implement_LRU_Cache_Feature
+S103_Lab_Implement_LRU_Cache_Feature ..> C103_LRU_Cache : implements
+' Likely needs args for config
+S103_Lab_Combine_Features_In_Decorator --> S102_Create_Decorator_With_Arguments
+
+note bottom
+  Diagram for dec103.md.
+  Focuses on advanced decorator patterns, statefulness, and real-world applications.
+end note
+@enduml

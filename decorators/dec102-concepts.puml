@@ -1,0 +1,40 @@
+@startmindmap
+title Decorators 102 - Concepts Tree
+
+* **Decorators 102: Overall Conceptual Understanding**
+**_ Understand techniques for creating more sophisticated and practical decorators._**
+
+** Module 1: Preserving Function Metadata
+*** Concept: Function Metadata [5]
+**** Attributes like `__name__`, `__doc__`, `__module__`, `__annotations__`
+*** Concept: Introspection
+**** Examining the type or properties of objects at runtime
+*** Concept: `functools.wraps` [6]
+**** Purpose: Copying metadata from original function to wrapper
+
+** Module 2: Stateful Decorators
+*** Concept: State (in programming)
+**** Data that persists across multiple calls or operations
+*** Concept: Side Effects
+**** How stateful decorators can introduce side effects
+*** Concept: `nonlocal` keyword (Contextual understanding, if applicable to chosen state method)
+*** Concept: Class as Callable (`__call__` method) [11, 12]
+**** Enabling class instances to behave like functions
+
+** Module 3: Common Decorator Use Cases - Part 1
+*** Concept: Performance Measurement
+**** Profiling execution time
+*** Concept: Logging and Debugging
+**** Tracing program execution and state
+*** Concept: Simulation (e.g., of latency)
+**** Introducing artificial delays for testing or modeling
+
+** Module 4: Chaining Decorators
+*** Concept: Decorator Chaining / Stacking [6, 9]
+**** Applying multiple layers of behavior modification
+*** Concept: Order of Application (Bottom-Up)
+**** Decorator closest to function definition is applied first
+*** Concept: Order of Execution (Top-Down)
+**** Outermost wrapper executes first at call time
+
+@endmindmap
