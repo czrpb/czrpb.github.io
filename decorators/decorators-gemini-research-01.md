@@ -41,22 +41,22 @@ A detailed pedagogical framework document was created, outlining the following t
 
 * **Overall Goal**: To delve into advanced decorator techniques, including parameterized decorators, a thorough examination of class-based decorators, decorating methods and entire classes, and exploring sophisticated real-world applications.
 * **Modules**:
-    1. **Decorators with Arguments (Parameterized Decorators)**: Introduces the "decorator factory" pattern, where a function takes arguments and returns the actual decorator.
-    1. **Class Decorators In-Depth**: Provides a detailed look at using classes as decorators, implementing `__init__` and `__call__`, managing state with instance attributes, and creating parameterized class decorators.
-    1. **Decorating Methods and Classes**: Covers decorating instance methods (handling `self`), using built-in decorators (`@staticmethod`, `@classmethod`, `@property`), and decorating entire classes to modify or extend them.
-    1. **Advanced Decorator Use Cases - Part 2**: Explores sophisticated applications like memoization/caching, conceptual authentication/authorization, rate limiting, and plugin registration systems.
-    1. **Exploring the Descriptor Protocol (Optional Advanced Topic)**: Briefly introduces descriptors to provide deeper insight into how features like `@property` work.
+  1. **Decorators with Arguments (Parameterized Decorators)**: Introduces the "decorator factory" pattern, where a function takes arguments and returns the actual decorator.
+  1. **Class Decorators In-Depth**: Provides a detailed look at using classes as decorators, implementing `__init__` and `__call__`, managing state with instance attributes, and creating parameterized class decorators.
+  1. **Decorating Methods and Classes**: Covers decorating instance methods (handling `self`), using built-in decorators (`@staticmethod`, `@classmethod`, `@property`), and decorating entire classes to modify or extend them.
+  1. **Advanced Decorator Use Cases - Part 2**: Explores sophisticated applications like memoization/caching, conceptual authentication/authorization, rate limiting, and plugin registration systems.
+  1. **Exploring the Descriptor Protocol (Optional Advanced Topic)**: Briefly introduces descriptors to provide deeper insight into how features like `@property` work.
 
 ## 4. Key Concepts and Terminology Covered
 
 Throughout the curriculum development, the following key concepts related to Python decorators and the pedagogical approach have been detailed:
 
 ### Fundamental Python Concepts
-  1. Functions as First-Class Objects: Assignable, passable, returnable.
-  1. Higher-Order Functions: Functions that operate on other functions.
-  1. Closures: Functions that retain access to their enclosing lexical scope.
-  1. Lexical Scoping & Free Variables
-  1. `*args` and `**kwargs` for arbitrary arguments.
+1. Functions as First-Class Objects: Assignable, passable, returnable.
+1. Higher-Order Functions: Functions that operate on other functions.
+1. Closures: Functions that retain access to their enclosing lexical scope.
+1. Lexical Scoping & Free Variables
+1. `*args` and `**kwargs` for arbitrary arguments.
 
 ### Decorator Basics
   1. Definition: A way to modify or extend function/method behavior.
