@@ -1,0 +1,116 @@
+<svg viewBox="0 0 700 920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" fill="#aaa">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+    <style>
+      .svg-concept { fill: #d4c8a1; stroke: #b8a980; stroke-width: 1.5; } /* Darker concept */
+      .svg-skill { fill: #a1d4c8; stroke: #80b8a9; stroke-width: 1.5; }   /* Darker skill */
+      .svg-text { font-family: 'Arial', sans-serif; font-size: 10px; fill: black; text-anchor: middle; }
+      .svg-text-sm { font-family: 'Arial', sans-serif; font-size: 9px; fill: black; text-anchor: middle; }
+      .svg-line { stroke: #aaa; stroke-width: 1.5; marker-end: url(#arrowhead); }
+      .svg-title { font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; fill: #bbeeff; text-anchor: middle; }
+      .svg-module-title { font-family: 'Arial', sans-serif; font-size: 12px; font-weight: bold; fill: #ffffff; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <text x="350" y="30" class="svg-title">Decorators 101: Aggregated Skill &amp; Concept Tree</text>
+
+  <rect x="550" y="50" width="130" height="55" rx="5" ry="5" fill="#a980b8" stroke="#333366"/>
+  <rect x="560" y="60" width="20" height="15" class="svg-concept" rx="2"/>
+  <text x="615" y="71" class="svg-text-sm">Concept</text>
+  <rect x="560" y="80" width="20" height="15" class="svg-skill" rx="2"/>
+  <text x="610" y="91" class="svg-text-sm">Skill</text>
+
+  <text x="150" y="70" class="svg-module-title">M1: Functions as First-Class Objects</text>
+  <rect x="30" y="90" width="140" height="45" rx="5" class="svg-concept" id="c1.1"/>
+  <text x="100" y="108" class="svg-text-sm">C1.1: First-Class</text>
+  <text x="100" y="120" class="svg-text-sm">Citizen</text>
+  <rect x="30" y="155" width="140" height="45" rx="5" class="svg-concept" id="c1.5"/>
+  <text x="100" y="173" class="svg-text-sm">C1.5: Lexical</text>
+  <text x="100" y="185" class="svg-text-sm">Scope (Intro)</text>
+  <rect x="200" y="90" width="140" height="45" rx="5" class="svg-concept" id="c1.3"/>
+  <text x="270" y="108" class="svg-text-sm">C1.3: Higher-Order</text>
+  <text x="270" y="120" class="svg-text-sm">Function (HOF)</text>
+  <rect x="200" y="155" width="140" height="45" rx="5" class="svg-concept" id="c1.4"/>
+  <text x="270" y="173" class="svg-text-sm">C1.4: Inner / Nested</text>
+  <text x="270" y="185" class="svg-text-sm">Functions</text>
+
+  <rect x="30" y="225" width="140" height="45" rx="5" class="svg-skill" id="s1.1"/>
+  <text x="100" y="243" class="svg-text-sm">S1.1: Assign Func</text>
+  <text x="100" y="255" class="svg-text-sm">to Variable</text>
+  <rect x="200" y="225" width="140" height="45" rx="5" class="svg-skill" id="s1.2"/>
+  <text x="270" y="243" class="svg-text-sm">S1.2: Define Inner</text>
+  <text x="270" y="255" class="svg-text-sm">Function</text>
+  <rect x="30" y="290" width="140" height="45" rx="5" class="svg-skill" id="s1.3"/>
+  <text x="100" y="308" class="svg-text-sm">S1.3: Pass Func</text>
+  <text x="100" y="320" class="svg-text-sm">as Argument</text>
+  <rect x="200" y="290" width="140" height="45" rx="5" class="svg-skill" id="s1.4"/>
+  <text x="270" y="308" class="svg-text-sm">S1.4: Return Func</text>
+  <text x="270" y="320" class="svg-text-sm">from Function</text>
+
+  <text x="470" y="70" class="svg-module-title">M2: Understanding Closures</text>
+  <rect x="380" y="90" width="140" height="45" rx="5" class="svg-concept" id="c2.3"/>
+  <text x="450" y="108" class="svg-text-sm">C2.3: Free</text>
+  <text x="450" y="120" class="svg-text-sm">Variables</text>
+  <rect x="380" y="155" width="140" height="45" rx="5" class="svg-concept" id="c2.1"/>
+  <text x="450" y="173" class="svg-text-sm">C2.1: Closure</text>
+  <text x="450" y="185" class="svg-text-sm">(Func + Env)</text>
+
+  <rect x="380" y="225" width="140" height="45" rx="5" class="svg-skill" id="s2.1"/>
+  <text x="450" y="243" class="svg-text-sm">S2.1: Identify Free</text>
+  <text x="450" y="255" class="svg-text-sm">Variables</text>
+  <rect x="380" y="290" width="140" height="45" rx="5" class="svg-skill" id="s2.2"/>
+  <text x="450" y="308" class="svg-text-sm">S2.2: Create Simple</text>
+  <text x="450" y="320" class="svg-text-sm">Closure</text>
+  <rect x="380" y="355" width="140" height="45" rx="5" class="svg-skill" id="s2.3"/>
+  <text x="450" y="373" class="svg-text-sm">S2.3: Utilize</text>
+  <text x="450" y="385" class="svg-text-sm">Closure</text>
+
+  <text x="170" y="400" class="svg-module-title">M3: Introduction to Decorators</text>
+  <rect x="30" y="420" width="140" height="45" rx="5" class="svg-concept" id="c3.1"/>
+  <text x="100" y="438" class="svg-text-sm">C3.1: Decorator</text>
+  <text x="100" y="450" class="svg-text-sm">(Definition)</text>
+  <rect x="30" y="485" width="140" height="45" rx="5" class="svg-concept" id="c3.2"/>
+  <text x="100" y="503" class="svg-text-sm">C3.2: Wrapper</text>
+  <text x="100" y="515" class="svg-text-sm">Function</text>
+  <rect x="30" y="550" width="140" height="45" rx="5" class="svg-concept" id="c3.3"/>
+  <text x="100" y="568" class="svg-text-sm">C3.3: @ Syntax</text>
+  <text x="100" y="580" class="svg-text-sm">(Syntactic Sugar)</text>
+  <rect x="200" y="450" width="140" height="55" rx="5" class="svg-skill" id="s3.1"/>
+  <text x="270" y="468" class="svg-text-sm">S3.1: Define Basic</text>
+  <text x="270" y="480" class="svg-text-sm">Decorator</text>
+  <text x="270" y="492" class="svg-text-sm">(Wrapper Pattern)</text>
+  <rect x="200" y="525" width="140" height="45" rx="5" class="svg-skill" id="s3.2"/>
+  <text x="270" y="543" class="svg-text-sm">S3.2: Apply Decorator</text>
+  <text x="270" y="555" class="svg-text-sm">Manually</text>
+  <rect x="200" y="590" width="140" height="45" rx="5" class="svg-skill" id="s3.3"/>
+  <text x="270" y="608" class="svg-text-sm">S3.3: Use @ Syntax</text>
+  <text x="270" y="620" class="svg-text-sm">to Apply</text>
+
+  <text x="500" y="430" class="svg-module-title">M4: Decorators w/ Args</text>
+  <rect x="380" y="450" width="140" height="45" rx="5" class="svg-concept" id="c4.1"/>
+  <text x="450" y="468" class="svg-text-sm">C4.1: Arbitrary Args</text>
+  <text x="450" y="480" class="svg-text-sm">(*args, **kwargs)</text>
+  <rect x="550" y="450" width="140" height="55" rx="5" class="svg-skill" id="s4.1-s4.2"/> <text x="620" y="468" class="svg-text-sm">S4.1/4.2: Wrapper</text>
+  <text x="620" y="480" class="svg-text-sm">Accepts *args,</text>
+  <text x="620" y="492" class="svg-text-sm">**kwargs</text>
+  <rect x="460" y="525" width="140" height="55" rx="5" class="svg-skill" id="s4.3"/>
+  <text x="530" y="543" class="svg-text-sm">S4.3: Pass *args,</text>
+  <text x="530" y="555" class="svg-text-sm">**kwargs to</text>
+  <text x="530" y="567" class="svg-text-sm">Decorated Func</text>
+
+  <text x="350" y="670" class="svg-module-title">M5: Returning Values from Decorated Functions</text>
+  <rect x="280" y="700" width="140" height="55" rx="5" class="svg-concept" id="c5.1"/> <text x="350" y="718" class="svg-text-sm">C5.1: Function</text>
+  <text x="350" y="730" class="svg-text-sm">Return Values</text>
+  <text x="350" y="742" class="svg-text-sm">(Propagation)</text>
+  
+  <rect x="200" y="770" width="140" height="55" rx="5" class="svg-skill" id="s5.1"/> <text x="270" y="788" class="svg-text-sm">S5.1: Wrapper Captures</text>
+  <text x="270" y="800" class="svg-text-sm">Return Value of</text>
+  <text x="270" y="812" class="svg-text-sm">Decorated Func</text>
+  
+  <rect x="360" y="770" width="140" height="55" rx="5" class="svg-skill" id="s5.2"/> <text x="430" y="788" class="svg-text-sm">S5.2: Wrapper Returns</text>
+  <text x="430" y="800" class="svg-text-sm">Captured Value</text>
+
+
+  <line x1="100" y1="135" x2="100" y2="225" class="svg-line"/> <line x1="270" y1="135" x2="100" y2="290" class="svg-line"/> <line x1="270" y1="135" x2="270" y2="290" class="svg-line"/> <line x1="270" y1="200" x2="270" y2="225" class="svg-line"/> <line x1="100" y1="200" x2="450" y2="155" class="svg-line"/> <line x1="270" y1="200" x2="450" y2="155" class="svg-line"/> <line x1="450" y1="135" x2="450" y2="225" class="svg-line"/> <line x1="450" y1="200" x2="450" y2="290" class="svg-line"/> <line x1="450" y1="335" x2="450" y2="355" class="svg-line"/> <line x1="270" y1="135" x2="100" y2="420" class="svg-line"/> <line x1="270" y1="200" x2="100" y2="485" class="svg-line"/> <line x1="450" y1="200" x2="100" y2="485" class="svg-line"/> <line x1="100" y1="465" x2="270" y2="450" class="svg-line"/> <line x1="100" y1="530" x2="270" y2="450" class="svg-line"/> <line x1="270" y1="270" x2="270" y2="450" class="svg-line"/> <line x1="270" y1="335" x2="270" y2="450" class="svg-line"/> <line x1="270" y1="505" x2="270" y2="525" class="svg-line"/> <line x1="100" y1="595" x2="270" y2="590" class="svg-line"/> <line x1="270" y1="505" x2="270" y2="590" class="svg-line"/> <line x1="270" y1="570" x2="270" y2="590" class="svg-line"/> <line x1="270" y1="505" x2="450" y2="450" class="svg-line"/> <line x1="450" y1="495" x2="620" y2="450" class="svg-line"/> <line x1="270" y1="505" x2="620" y2="450" class="svg-line"/> <line x1="620" y1="505" x2="530" y2="525" class="svg-line"/> <line x1="270" y1="505" x2="270" y2="770" class="svg-line"/> <line x1="530" y1="580" x2="270" y2="770" class="svg-line"/> <line x1="350" y1="755" x2="270" y2="770" class="svg-line"/> <line x1="350" y1="755" x2="430" y2="770" class="svg-line"/> <line x1="340" y1="797.5" x2="360" y2="797.5" class="svg-line"/> <line x1="170" y1="350" x2="170" y2="400" class="svg-line" stroke-dasharray="5,5"/> <line x1="450" y1="400" x2="170" y2="400" class="svg-line" stroke-dasharray="5,5"/> <line x1="270" y1="635" x2="500" y2="430" class="svg-line" stroke-dasharray="5,5"/> <line x1="350" y1="635" x2="350" y2="670" class="svg-line" stroke-dasharray="5,5"/> </svg>
