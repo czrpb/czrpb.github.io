@@ -77,7 +77,7 @@ Closures are a critical concept for understanding how decorators can maintain ac
     3. The outer function returns the inner function.
 * **Practical Example:**
 
-```
+```python
     def outer_creator(msg_param):
         message_content = msg_param # 'message_content' is a free variable for inner_printer
         def inner_printer():
@@ -94,8 +94,6 @@ Closures are a critical concept for understanding how decorators can maintain ac
   
 * **Importance for Decorators:** The wrapper function within a decorator often forms a closure. It "remembers" the original function (func) passed to the decorator, allowing the wrapper to call func later, even after the decorator function itself has returned. This "memory" is fundamental to how decorators operate.
 
-###
-
 ### **Module 3: Introduction to Decorators: Enhancing Functions Simply**
 
 This module introduces the core concept of decorators, their syntax, and the fundamental wrapper function pattern.
@@ -109,15 +107,17 @@ This module introduces the core concept of decorators, their syntax, and the fun
   * **Readability and Separation of Concerns:** They allow for adding functionalities like logging, timing, or access control in a clean and declarative way, separating these cross-cutting concerns from the core logic of the function.
 * **Basic Decorator Structure (The Wrapper Function Pattern):**
   Python
-  def simple_logging_decorator(func_to_decorate): # 1. Decorator takes a function
+  def simple_logging_decorator(func_to_decorate): # 1. Decorator takes a function7
+```python
       def wrapper_function():      # 2. Defines an inner (wrapper) function
           print(f"LOG: Calling function {func_to_decorate.__name__}")
           func_to_decorate()       # 3. Calls the original function
           print(f"LOG: Finished function {func_to_decorate.__name__}")
       return wrapper_function  # 4. Returns the wrapper function
-  7
+```
+
 * **Applying a Decorator Manually (Conceptual Understanding):** This illustrates what the @ syntax does behind the scenes.
-  Python
+```python
   def say_whee_original():
       print("Whee!")
 
@@ -127,9 +127,10 @@ This module introduces the core concept of decorators, their syntax, and the fun
   # LOG: Calling function say_whee_original
   # Whee!
   # LOG: Finished function say_whee_original
+```
 
 * **The @ Syntax (Syntactic Sugar):** The @ symbol provides a more readable and Pythonic way to apply decorators.7 The line @my_decorator above a function definition def my_func():... is equivalent to my_func = my_decorator(my_func).7
-  Python
+```python
   @simple_logging_decorator
   def say_hello_decorated():
       print("Hello!")
@@ -139,6 +140,7 @@ This module introduces the core concept of decorators, their syntax, and the fun
   # LOG: Calling function say_hello_decorated
   # Hello!
   # LOG: Finished function say_hello_decorated
+```
 
 **Table 1: Core Decorator Terminology**
 
@@ -149,8 +151,6 @@ This module introduces the core concept of decorators, their syntax, and the fun
 | Wrapper Function | The inner function defined by the decorator; it adds new behavior and typically calls the original function. | def wrapper():... func()... |
 | Syntactic Sugar (@) | A concise syntax (@decorator_name) used to apply a decorator to a function. | @my_decorator |
 
-###
-
 ### **Module 4: Decorating Functions With Arguments**
 
 Real-world functions often take arguments. Decorators must be able to handle these arguments correctly.
@@ -160,7 +160,7 @@ Real-world functions often take arguments. Decorators must be able to handle the
   * *args collects all positional arguments into a tuple.
   * **kwargs collects all keyword arguments into a dictionary.
 
-Python
+```python
 def arguments_handler_decorator(func):
     def wrapper(*args, **kwargs): # Wrapper accepts any arguments
         print(f"Wrapper: Calling {func.__name__} with arguments: {args}, keyword arguments: {kwargs}")
@@ -183,9 +183,8 @@ sum_result = add_numbers(10, 5) # sum_result will be 15
 
 greeting_message = greet_person("Alice", greeting="Hi") # greeting_message will be "Hi, Alice!"
 # Output will show wrapper messages around the greet_person call
+```
 10
-
-###
 
 ### **Module 5: Returning Values From Decorated Functions**
 
@@ -193,7 +192,7 @@ If the original decorated function returns a value, the decorator's wrapper must
 
 * **The Challenge:** A wrapper that doesn't return the result of the original function call will implicitly return None, effectively making the decorated function always return None.
 * **Solution:** The wrapper function must explicitly return the value obtained from calling the original function.9 The example in Module 4 (arguments_handler_decorator) already demonstrates this correctly with the line return result.
-  Python
+```python
   # Using arguments_handler_decorator from Module 4
 
   @arguments_handler_decorator
@@ -202,6 +201,7 @@ If the original decorated function returns a value, the decorator's wrapper must
 
   product_result = multiply_values(7, 6)
   print(f"The product is: {product_result}") # product_result will be 42
+```
   Forgetting to include return func(*args, **kwargs) (or return result after storing it) in the wrapper is a common oversight for beginners. This leads to puzzling behavior where the decorated function seems to work (e.g., prints things) but doesn't return its expected value. Explicitly addressing this pitfall is crucial.
 
 ##
@@ -269,7 +269,7 @@ Some decorators need to maintain state across multiple calls to the decorated fu
 * **Concept:** The decorator needs to "remember" information from one invocation to the next.
 * **Using Closures for State:** A variable defined in the decorator function's scope (but outside the wrapper function) can hold this state. The wrapper, being a closure, can access and modify this state variable using the nonlocal keyword if the state variable is in the immediate enclosing scope, or by making the state an attribute of the wrapper function itself.
   * **Example: A call counter (state as wrapper attribute):**
-    Python
+```python
     import functools
 
     def call_counter_decorator(func):
@@ -288,6 +288,7 @@ Some decorators need to maintain state across multiple calls to the decorated fu
     say_hello_counted() # Call 1 of 'say_hello_counted'
     say_hello_counted() # Call 2 of 'say_hello_counted'
     print(f"Total calls to say_hello_counted: {say_hello_counted.num_calls}") # Output: 2
+```
 
 * **Introduction to Class-Based Decorators for State (Brief Overview):** While function-based closures can manage state, class-based decorators often provide a more organized and flexible approach for complex state management.16 Class instances can naturally hold state in their attributes. This will be explored further in Decorators 103.
   Python
@@ -318,7 +319,7 @@ Some decorators need to maintain state across multiple calls to the decorated fu
 This module demonstrates practical applications of the decorator concepts learned so far.9
 
 * **Timing Function Execution:** Decorators can transparently measure the execution time of a function.9
-  Python
+```python
   import time
   import functools
 
@@ -340,9 +341,9 @@ This module demonstrates practical applications of the decorator concepts learne
 
   simulate_long_task(1)
   simulate_long_task(5)
-
+```
 * **Basic Logging:** Decorators can log function calls, arguments, and return values, which is useful for debugging and tracing.8
-  Python
+```python
   import functools
 
   def basic_debug_logger(func):
@@ -363,7 +364,7 @@ This module demonstrates practical applications of the decorator concepts learne
 
   create_greeting_message("Bob", custom_age=42)
   create_greeting_message("Carol")
-
+```
 * **Slowing Down Code (Simplified):** A decorator can introduce a delay before or after a function call, useful for simulating network latency or for very basic forms of rate limiting.9
   Python
   import time
