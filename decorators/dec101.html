@@ -498,8 +498,25 @@ footer {
 " lang="en-US" class="invert" data-marpit-pagination="8" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
 ;" data-marpit-pagination-total="10" data-size="16:9">
 <h3 id="decorator-arrived">Decorator: Arrived!!</h3>
+
+<p><strong>This is the key slide!!</strong></p>
 <table width="100%;" style="font-size: 22pt;">
 <tr><td width="50%" style="vertical-align: top;">
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">x_div_y</span>(<span class="hljs-params">x, y</span>):
+   <span class="hljs-keyword">return</span> x / y
+   
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">raise_when_2nd_arg_is_0</span>(<span class="hljs-params">p1, p2, fn=x_div_y</span>):
+   <span class="hljs-keyword">if</span> p2 == <span class="hljs-number">0</span>:
+      <span class="hljs-keyword">raise</span> RuntimeError(
+         <span class="hljs-string">&quot;0 is an invalid argument&quot;</span>
+         <span class="hljs-string">&quot; to the 2nd parameter.&quot;</span>
+      )
+   <span class="hljs-keyword">return</span> fn(p1, p2)
+   
+x_div_y = raise_when_2nd_arg_is_0
+</code></pre>
+<p>But we want to be able to decorate any function.</p>
+</td><td data-marpit-fragment="1" data-bespoke-marp-fragment="inactive">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">x_div_y</span>(<span class="hljs-params">x, y</span>):
    <span class="hljs-keyword">return</span> x / y
    
@@ -515,26 +532,7 @@ footer {
    
 x_div_y = raise_when_2nd_arg_is_0(x_div_y)
 </code></pre>
-<p><strong>This is the key conceptual jump!</strong></p>
-<span  class="fa-solid fa-brain my-medium-size">
-<a href="https://en.wikipedia.org/wiki/Closure_(computer_programming)">Closures</a>
-</span>
-</td><td data-marpit-fragment="1" data-bespoke-marp-fragment="inactive">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">raise_when_2nd_arg_is_0</span>(<span class="hljs-params">fn</span>):
-   <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">p1, p2</span>):
-      <span class="hljs-keyword">if</span> p2 == <span class="hljs-number">0</span>:
-         <span class="hljs-keyword">raise</span> RuntimeError(
-            <span class="hljs-string">&quot;0 is an invalid argument&quot;</span>
-            <span class="hljs-string">&quot; to the 2nd parameter.&quot;</span>
-         )
-      <span class="hljs-keyword">return</span> fn(p1, p2)
-   <span class="hljs-keyword">return</span> wrapper
-
-<span class="hljs-meta">@raise_when_2nd_arg_is_0</span>
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">x_div_y</span>(<span class="hljs-params">x, y</span>):
-   <span class="hljs-keyword">return</span> x / y
-</code></pre>
-<p>This is just syntaxic sugar.</p>
+<p><strong>!!</strong>   <span class="fa-solid fa-plane-arrival"> </span>   <strong>!!</strong></p>
 </td></tr>
 </table>
 </section>
