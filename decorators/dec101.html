@@ -534,6 +534,9 @@ x_div_y = raise_when_2nd_arg_is_0
    
 x_div_y = raise_when_2nd_arg_is_0(x_div_y)
 </code></pre>
+<span  class="fa-solid fa-brain my-medium-size">
+<a href="https://en.wikipedia.org/wiki/Closure_(computer_programming)">Closures</a>
+</span>
 </span>
 </td></tr>
 </table>
@@ -598,9 +601,7 @@ footer {
    
 x_div_y = raise_when_2nd_arg_is_0(x_div_y)
 </code></pre>
-<span  class="fa-solid fa-brain my-medium-size">
-<a href="https://en.wikipedia.org/wiki/Closure_(computer_programming)">Closures</a>
-</span>
+<p>But this isn't Python's decorator syntax ...</p>
 </td><td data-marpit-fragment="1" data-bespoke-marp-fragment="inactive">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">raise_when_2nd_arg_is_0</span>(<span class="hljs-params">fn</span>):
    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">p1, p2</span>):
@@ -620,7 +621,7 @@ x_div_y = raise_when_2nd_arg_is_0(x_div_y)
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">list_with_item_repeated</span>(<span class="hljs-params">item, count</span>):
    <span class="hljs-keyword">return</span> [item] * count
 </code></pre>
-<p>This is just syntaxic sugar.</p>
+<p><code>@</code> is just syntaxic sugar.</p>
 </td></tr>
 </table>
 </section>
