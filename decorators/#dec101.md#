@@ -404,8 +404,6 @@ x_div_y = raise_when_2nd_arg_is_0(x_div_y)
 <table width="100%;" style="font-size: 22pt;">
 <tr><td width="50%" style="vertical-align: top;">
 
-But this isn't Python's decorator syntax ...
-
 ```python
 def x_div_y(x, y):
    return x / y
@@ -458,35 +456,37 @@ def list_with_item_repeated(item, count):
 <tr><td width="50%" style="vertical-align: top;">
 
 ```python
->>> x_div_y(1, 5)
-0.2
+>>> x_div_y(1, 4)
+0.25
+
 >>> x_div_y(1, 0)
 Traceback (most recent call last):
-  File "<python-input-3>", line 1, in <module>
+  File "<python-input-5>", line 1, in <module>
     x_div_y(1, 0)
     ~~~~~~~^^^^^^
-  File "<python-input-1>", line 4, in wrapper
-    raise ZeroIsAnInvalidArgument(
+  File "<python-input-0>", line 4, in wrapper
+    raise RuntimeError(
     ...<2 lines>...
     )
-ZeroIsAnInvalidArgument: 0 is an invalid argument to the 2nd parameter.
+RuntimeError: 0 is an invalid argument to the 2nd parameter.
 ```
 
 </td><td>
 
 ```python
->>> list_with_item_repeated("A", 5)
-['A', 'A', 'A', 'A', 'A']
+>>> list_with_item_repeated("A", 4)
+['A', 'A', 'A', 'A']
+
 >>> list_with_item_repeated("A", 0)
 Traceback (most recent call last):
-  File "<python-input-5>", line 1, in <module>
+  File "<python-input-3>", line 1, in <module>
     list_with_item_repeated("A", 0)
     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
-  File "<python-input-1>", line 4, in wrapper
-    raise ZeroIsAnInvalidArgument(
+  File "<python-input-0>", line 4, in wrapper
+    raise RuntimeError(
     ...<2 lines>...
     )
-ZeroIsAnInvalidArgument: 0 is an invalid argument to the 2nd parameter.
+RuntimeError: 0 is an invalid argument to the 2nd parameter.
 ```
 
 </td></tr>
