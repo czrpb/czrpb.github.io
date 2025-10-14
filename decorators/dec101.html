@@ -451,6 +451,7 @@ footer {
 <h3 id="decorator-building-up-cont">Decorator: Building Up cont.</h3>
 <table width="100%;" style="font-size: 22pt;">
 <tr><td width="50%" style="vertical-align: top;">
+<p>How DOES this fail?</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">x_div_y</span>(<span class="hljs-params">x, y</span>):
    <span class="hljs-keyword">return</span> x / y
    
@@ -464,7 +465,6 @@ footer {
    
 x_div_y = raise_when_2nd_arg_is_0
 </code></pre>
-<p>How DOES this fail?</p>
 </td><td data-marpit-fragment="1" data-bespoke-marp-fragment="inactive">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">Traceback (most recent call last):
   File <span class="hljs-string">&quot;&lt;python-input-1&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
@@ -693,6 +693,7 @@ footer {
 <h3 id="decorator-arrived-cont">Decorator: Arrived cont.</h3>
 <table width="100%;" style="font-size: 22pt;">
 <tr><td width="50%" style="vertical-align: top;">
+<p>But this isn't Python's decorator syntax ...</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">x_div_y</span>(<span class="hljs-params">x, y</span>):
    <span class="hljs-keyword">return</span> x / y
    
@@ -708,7 +709,6 @@ footer {
    
 x_div_y = raise_when_2nd_arg_is_0(x_div_y)
 </code></pre>
-<p>But this isn't Python's decorator syntax ...</p>
 </td><td data-marpit-fragment="1" data-bespoke-marp-fragment="inactive">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">raise_when_2nd_arg_is_0</span>(<span class="hljs-params">fn</span>):
    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">p1, p2</span>):
@@ -777,34 +777,32 @@ footer {
 <h1 id="e-n-d">E N D</h1>
 <table width="100%;" style="font-size: 22pt;">
 <tr><td width="50%" style="vertical-align: top;">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x_div_y(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>)
-<span class="hljs-number">0.25</span>
-
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x_div_y(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>)
+<span class="hljs-number">0.2</span>
 <span class="hljs-meta">&gt;&gt;&gt; </span>x_div_y(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)
 Traceback (most recent call last):
-  File <span class="hljs-string">&quot;&lt;python-input-5&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+  File <span class="hljs-string">&quot;&lt;python-input-3&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
     x_div_y(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)
     ~~~~~~~^^^^^^
-  File <span class="hljs-string">&quot;&lt;python-input-0&gt;&quot;</span>, line <span class="hljs-number">4</span>, <span class="hljs-keyword">in</span> wrapper
-    <span class="hljs-keyword">raise</span> RuntimeError(
+  File <span class="hljs-string">&quot;&lt;python-input-1&gt;&quot;</span>, line <span class="hljs-number">4</span>, <span class="hljs-keyword">in</span> wrapper
+    <span class="hljs-keyword">raise</span> ZeroIsAnInvalidArgument(
     ...&lt;<span class="hljs-number">2</span> lines&gt;...
     )
-RuntimeError: <span class="hljs-number">0</span> <span class="hljs-keyword">is</span> an invalid argument to the 2nd parameter.
+ZeroIsAnInvalidArgument: <span class="hljs-number">0</span> <span class="hljs-keyword">is</span> an invalid argument to the 2nd parameter.
 </code></pre>
 </td><td>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>list_with_item_repeated(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-number">4</span>)
-[<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>]
-
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>list_with_item_repeated(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-number">5</span>)
+[<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>]
 <span class="hljs-meta">&gt;&gt;&gt; </span>list_with_item_repeated(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-number">0</span>)
 Traceback (most recent call last):
-  File <span class="hljs-string">&quot;&lt;python-input-3&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+  File <span class="hljs-string">&quot;&lt;python-input-5&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
     list_with_item_repeated(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-number">0</span>)
     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
-  File <span class="hljs-string">&quot;&lt;python-input-0&gt;&quot;</span>, line <span class="hljs-number">4</span>, <span class="hljs-keyword">in</span> wrapper
-    <span class="hljs-keyword">raise</span> RuntimeError(
+  File <span class="hljs-string">&quot;&lt;python-input-1&gt;&quot;</span>, line <span class="hljs-number">4</span>, <span class="hljs-keyword">in</span> wrapper
+    <span class="hljs-keyword">raise</span> ZeroIsAnInvalidArgument(
     ...&lt;<span class="hljs-number">2</span> lines&gt;...
     )
-RuntimeError: <span class="hljs-number">0</span> <span class="hljs-keyword">is</span> an invalid argument to the 2nd parameter.
+ZeroIsAnInvalidArgument: <span class="hljs-number">0</span> <span class="hljs-keyword">is</span> an invalid argument to the 2nd parameter.
 </code></pre>
 </td></tr>
 </table>
