@@ -187,16 +187,16 @@ footer {
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">random</span>():
     <span class="hljs-keyword">return</span> randint(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>)
 random = div_by_2(random)
+
+random()
 </code></pre>
 </td><td width="50%" data-marpit-fragment="2" data-bespoke-marp-fragment="inactive">
 <p>Decorator Syntax:</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-meta">@div_by_2</span>
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">random</span>():
     <span class="hljs-keyword">return</span> randint(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>)
-</code></pre>
-</td></tr>
-<tr><td colspan="2">
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">random()
+
+random()
 </code></pre>
 </td></tr>
 </table>
@@ -232,6 +232,7 @@ footer {
 <h3 id="div_by-as-decorator"><code>div_by</code> as Decorator</h3>
 <table width="100%" style="font-size: 24pt;">
 <tr><td width="50%">
+<p>We want to <code>div_by</code> any integer.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint
 
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by_2</span>(<span class="hljs-params">func</span>):
@@ -245,7 +246,6 @@ footer {
 
 random()
 </code></pre>
-<p>We want to <code>div_by</code> any integer.</p>
 </td><td data-marpit-fragment="1" data-bespoke-marp-fragment="inactive">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint
 
