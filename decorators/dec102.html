@@ -176,9 +176,9 @@ footer {
 <tr><td colspan="2">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint
 
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by_2</span>(<span class="hljs-params">func</span>):
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by_2</span>(<span class="hljs-params">fn</span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>():
-        <span class="hljs-keyword">return</span> func() / <span class="hljs-number">2</span>
+        <span class="hljs-keyword">return</span> fn() / <span class="hljs-number">2</span>
     <span class="hljs-keyword">return</span> wrapper
 </code></pre>
 </td></tr>
@@ -235,9 +235,9 @@ footer {
 <p>We want to <code>div_by</code> any integer.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint
 
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by_2</span>(<span class="hljs-params">func</span>):
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by_2</span>(<span class="hljs-params">fn</span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>():
-        <span class="hljs-keyword">return</span> func() / <span class="hljs-number">2</span>
+        <span class="hljs-keyword">return</span> fn() / <span class="hljs-number">2</span>
     <span class="hljs-keyword">return</span> wrapper
 
 <span class="hljs-meta">@div_by_2</span>
@@ -249,9 +249,9 @@ random()
 </td><td data-marpit-fragment="1" data-bespoke-marp-fragment="inactive">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint
 
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by</span>(<span class="hljs-params">func, x=<span class="hljs-number">2</span></span>):
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by</span>(<span class="hljs-params">fn, x=<span class="hljs-number">2</span></span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>():
-        <span class="hljs-keyword">return</span> func() / x
+        <span class="hljs-keyword">return</span> fn() / x
     <span class="hljs-keyword">return</span> wrapper
 
 <span class="hljs-meta">@div_by</span>
@@ -297,9 +297,9 @@ footer {
 <tr><td colspan="2">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint
 
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by</span>(<span class="hljs-params">func, x=<span class="hljs-number">2</span></span>):
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by</span>(<span class="hljs-params">fn, x=<span class="hljs-number">2</span></span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>():
-        <span class="hljs-keyword">return</span> func() / x
+        <span class="hljs-keyword">return</span> fn() / x
     <span class="hljs-keyword">return</span> wrapper
 
 <span class="hljs-meta">@div_by(<span class="hljs-params"><span class="hljs-number">5</span></span>)</span>
@@ -331,7 +331,7 @@ Traceback (most recent call last):
 <span class="hljs-meta">    @div_by(<span class="hljs-params">x=<span class="hljs-number">5</span></span>)</span>
      ~~~~~~^^^^^
 TypeError: div_by() missing <span class="hljs-number">1</span> required
-positional argument: <span class="hljs-string">&#x27;func&#x27;</span>
+positional argument: <span class="hljs-string">&#x27;fn&#x27;</span>
 </code></pre>
 </td></tr>
 </table>
@@ -376,9 +376,9 @@ What should <strong>that</strong> return?</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint
 
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">the_decorator</span>(<span class="hljs-params">func</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">the_decorator</span>(<span class="hljs-params">fn</span>):
         <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>():
-            <span class="hljs-keyword">return</span> func() / x
+            <span class="hljs-keyword">return</span> fn() / x
         <span class="hljs-keyword">return</span> wrapper
     <span class="hljs-keyword">return</span> the_decorator
 
@@ -426,9 +426,9 @@ footer {
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint
 
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">the_decorator</span>(<span class="hljs-params">func</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">the_decorator</span>(<span class="hljs-params">fn</span>):
         <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>():
-            <span class="hljs-keyword">return</span> func() / x
+            <span class="hljs-keyword">return</span> fn() / x
         <span class="hljs-keyword">return</span> wrapper
     <span class="hljs-keyword">return</span> the_decorator
 
@@ -489,9 +489,9 @@ footer {
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint
 
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">the_decorator</span>(<span class="hljs-params">func</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">the_decorator</span>(<span class="hljs-params">fn</span>):
         <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">start, end</span>):
-            <span class="hljs-keyword">return</span> func(start, end) / x
+            <span class="hljs-keyword">return</span> fn(start, end) / x
         <span class="hljs-keyword">return</span> wrapper
     <span class="hljs-keyword">return</span> the_decorator
 
@@ -553,9 +553,9 @@ footer {
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint
 
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">the_decorator</span>(<span class="hljs-params">func</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">the_decorator</span>(<span class="hljs-params">fn</span>):
         <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">start=<span class="hljs-number">0</span>, end=<span class="hljs-number">10</span></span>):
-            <span class="hljs-keyword">return</span> func(start, end) / x
+            <span class="hljs-keyword">return</span> fn(start, end) / x
         <span class="hljs-keyword">return</span> wrapper
     <span class="hljs-keyword">return</span> the_decorator
 
@@ -569,9 +569,9 @@ random()
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint
 
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">div_by</span>(<span class="hljs-params">x</span>):
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">the_decorator</span>(<span class="hljs-params">func</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">the_decorator</span>(<span class="hljs-params">fn</span>):
         <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapper</span>(<span class="hljs-params">*args, **kwargs</span>):
-            <span class="hljs-keyword">return</span> func(*args, **kwargs) / x
+            <span class="hljs-keyword">return</span> fn(*args, **kwargs) / x
         <span class="hljs-keyword">return</span> wrapper
     <span class="hljs-keyword">return</span> the_decorator
 
