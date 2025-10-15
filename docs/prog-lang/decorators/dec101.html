@@ -779,6 +779,7 @@ footer {
 <tr><td width="50%" style="vertical-align: top;">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x_div_y(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>)
 <span class="hljs-number">0.2</span>
+
 <span class="hljs-meta">&gt;&gt;&gt; </span>x_div_y(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)
 Traceback (most recent call last):
   File <span class="hljs-string">&quot;&lt;python-input-3&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
@@ -788,11 +789,13 @@ Traceback (most recent call last):
     <span class="hljs-keyword">raise</span> ZeroIsAnInvalidArgument(
     ...&lt;<span class="hljs-number">2</span> lines&gt;...
     )
-ZeroIsAnInvalidArgument: <span class="hljs-number">0</span> <span class="hljs-keyword">is</span> an invalid argument to the 2nd parameter.
+ZeroIsAnInvalidArgument: <span class="hljs-number">0</span> <span class="hljs-keyword">is</span> an invalid
+argument to the 2nd parameter.
 </code></pre>
 </td><td>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>list_with_item_repeated(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-number">5</span>)
 [<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>]
+
 <span class="hljs-meta">&gt;&gt;&gt; </span>list_with_item_repeated(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-number">0</span>)
 Traceback (most recent call last):
   File <span class="hljs-string">&quot;&lt;python-input-5&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
@@ -802,7 +805,8 @@ Traceback (most recent call last):
     <span class="hljs-keyword">raise</span> ZeroIsAnInvalidArgument(
     ...&lt;<span class="hljs-number">2</span> lines&gt;...
     )
-ZeroIsAnInvalidArgument: <span class="hljs-number">0</span> <span class="hljs-keyword">is</span> an invalid argument to the 2nd parameter.
+ZeroIsAnInvalidArgument: <span class="hljs-number">0</span> <span class="hljs-keyword">is</span> an invalid
+argument to the 2nd parameter.
 </code></pre>
 </td></tr>
 </table>
