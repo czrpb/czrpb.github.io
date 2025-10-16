@@ -1,0 +1,7 @@
+@startuml
+digraph PairingHeap {
+    node [shape=record];
+
+    N1 -> N2 [label="link"];
+}
+@enduml

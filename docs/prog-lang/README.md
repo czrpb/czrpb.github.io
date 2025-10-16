@@ -4,5 +4,4 @@
 
 ### Presentations
 
-* Decorators [Decorators 101](decorators/dec101.html)
-* Decorators [Decorators 102](decorators/dec102.html)
+* Decorators - [Decorators 101](decorators/dec101.html) [Decorators 102](decorators/dec102.html)

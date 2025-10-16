@@ -89,11 +89,19 @@ A heap is a tree-like structure where the root node meets some criteria, such as
 </span>
 
 <table width="100%" style="font-size: 22pt;">
-<tr><td width="50%" style="vertical-align: top;">
+<tr><td>
 
-<p class="fa-solid fa-brain my-medium-size">
-<a href="https://en.wikipedia.org/wiki/Tree_(abstract_data_type)">Tree</a>
-</p>
+<p class="fa-solid fa-brain">&nbsp;</p>
+<a style="font-size: 24pt;" href="https://en.wikipedia.org/wiki/Tree_(abstract_data_type)">Tree</a>
+
+</td><td>
+
+<p class="fa-solid fa-brain">&nbsp;</p>
+<a style="font-size: 24pt;" href="https://en.wikipedia.org/wiki/Heap_(data_structure)">Heap</a>
+
+</td></tr>
+
+<tr><td width="50%" style="vertical-align: top;">
 
 <div style="display: flex; align-items: center; justify-content: center;">
 
@@ -114,10 +122,6 @@ graph TD
 </div>
 
 </td><td style="vertical-align: top;">
-
-<p class="fa-solid fa-brain my-medium-size">
-<a href="https://en.wikipedia.org/wiki/Heap_(data_structure)">Heap</a>
-</p>
 
 <div style="display: flex; align-items: center; justify-content: center;">
 
@@ -142,6 +146,36 @@ graph TD
 
 ---
 
-asdf
+### Heap: Purpose
+
+<p style="font-size: 18pt;">
+A heap is used when we want to be able to get the next item in the heap quickly.
+</p>
+
+<table width="100%">
+<tr><th width="50%">Use Cases</th><th>Operations</th></tr>
+<tr><td>
+
+- Queues (priority)
+- Scheduling (jobs)
+
+</td><td>
+
+- `min` / `max`
+- `insert`
+- `pop`
+
+</td></tr>
+</table>
+
+---
+
+### fff
+
+```plantuml
+@startuml
+Bob -> Alice : hello
+@enduml
+```
 
 ---
