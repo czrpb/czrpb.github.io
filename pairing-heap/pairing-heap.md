@@ -71,8 +71,8 @@ Quentin Crain
 - Pairing Heap
   - Definition
   - Purpose
-  - Structure
   - Behaviors
+  - Structure
   - .
 
 - Bonus / Random
@@ -170,12 +170,153 @@ A heap is used when we want to be able to get the next item in the heap quickly.
 
 ---
 
-### fff
+### Pairing Heap: Behaviors - `min` / `max`
 
-```plantuml
-@startuml
-Bob -> Alice : hello
-@enduml
-```
+Simply returns the root node; heap is unchanged.
+
+**Performance**: `O(1)`
+
+---
+
+### Pairing Heap: Behaviors - `insert`
+
+<table width="100%">
+<tr><td width="45%">
+
+<div style="display: flex; align-items: center; justify-content: center;">
+
+<div class="mermaid" style="background: white;">
+graph TD
+    B
+    classDef box fill:#f5f5f0,stroke:#000000,stroke-width:2px,color:#000000;
+    class B2,A,B,C,D,B1,C1,C2 box;
+</div>
+
+</div>
+
+</td><td width="10%">
+
+<pre style="font-size: 20pt;">heap.insert("D")</pre>
+
+</td><td width="45%">
+
+<div style="display: flex; align-items: center; justify-content: center;">
+
+<div class="mermaid" style="background: white;">
+graph TD
+    B --> D
+    classDef box fill:#f5f5f0,stroke:#000000,stroke-width:2px,color:#000000;
+    class B2,A,B,C,D,B1,C1,C2 box;
+</div>
+
+</div>
+
+</td></tr>
+<tr><td>
+
+<div style="display: flex; align-items: center; justify-content: center;">
+
+<div class="mermaid" style="background: white;">
+graph TD
+    D
+    classDef box fill:#f5f5f0,stroke:#000000,stroke-width:2px,color:#000000;
+    class B2,A,B,C,D,B1,C1,C2 box;
+</div>
+
+</div>
+
+</td><td>
+
+<pre style="font-size: 20pt;">heap.insert("B")</pre>
+
+</td><td>
+<div style="display: flex; align-items: center; justify-content: center;">
+
+<div class="mermaid" style="background: white;">
+graph TD
+    B --> D
+    classDef box fill:#f5f5f0,stroke:#000000,stroke-width:2px,color:#000000;
+    class B2,A,B,C,D,B1,C1,C2 box;
+</div>
+
+</div>
+
+</td></tr>
+</table>
+
+---
+
+### Pairing Heap: Behaviors - `insert`
+
+<table width="100%">
+<tr><td width="45%">
+
+<div style="display: flex; align-items: center; justify-content: center;">
+
+<div class="mermaid" style="background: white;">
+graph TD
+    B --> D
+    classDef box fill:#f5f5f0,stroke:#000000,stroke-width:2px,color:#000000;
+    class B2,A,B,C,D,B1,C1,C2 box;
+</div>
+
+</div>
+
+</td><td width="10%">
+
+<pre style="font-size: 20pt;">heap.insert("C")</pre>
+
+</td><td width="45%">
+
+<div style="display: flex; align-items: center; justify-content: center;">
+
+<div class="mermaid" style="background: white;">
+graph TD
+    B --> D
+	B --> C
+    classDef box fill:#f5f5f0,stroke:#000000,stroke-width:2px,color:#000000;
+    class B2,A,B,C,D,B1,C1,C2 box;
+</div>
+
+</div>
+
+</td></tr>
+<tr><td>
+
+<div style="display: flex; align-items: center; justify-content: center;">
+
+<div class="mermaid" style="background: white;">
+graph TD
+    B --> D
+    classDef box fill:#f5f5f0,stroke:#000000,stroke-width:2px,color:#000000;
+    class B2,A,B,C,D,B1,C1,C2 box;
+</div>
+
+</div>
+
+</td><td>
+
+<pre style="font-size: 20pt;">heap.insert("A")</pre>
+
+</td><td>
+
+<div style="display: flex; align-items: center; justify-content: center;">
+
+<div class="mermaid" style="background: white;">
+graph TD
+    A --> B
+    B --> D
+    classDef box fill:#f5f5f0,stroke:#000000,stroke-width:2px,color:#000000;
+    class B2,A,B,C,D,B1,C1,C2 box;
+</div>
+
+</div>
+
+</td></tr>
+</table>
+
+---
+
+### Pairing Heap: Behaviors - `pop`
 
 ---
