@@ -65,7 +65,9 @@ Quentin Crain
 ## Agenda
 
 - What / Why Loop?
-- .
+- 2 Purposes for Looping
+- 3 Implementations of Iteration
+- 2 Implementations of Conditional
 
 ---
 
@@ -95,17 +97,81 @@ Are these the same?
 
 <img src="for_v_while.png" width="512" />
 
-- Iteration
-- Condition
+
+<table width="100%" style="font-size: 22pt;">
+
+<tr><th>
+Iteration
+</th><th>
+Condition
+</th></tr>
+
+<tr><td>
+
+```python
+for element in container:
+    f(element)
+```
+
+</td><td>
+
+```python
+element, *container = container
+while cond(element):
+    element, *container = container
+```
+
+</td></tr>
+</table>
 
 ---
 
-## 2 Implementations of Looping
+## 3 Implementations of Iteration
 
-- Iteration
-- Recursion
+<img src="iteration.png" width="640" />
+
+<table width="100%" style="font-size: 22pt;">
+
+<tr><td>
+
+```python
+sum = 0
+for num in nums:
+    sum += num
+```
+
+<a href="https://pythontutor.com/visualize.html#code=acc%20%3D%200%0Anums%20%3D%20range%284%2C13%29%0Afor%20num%20in%20nums%3A%0A%20%20%20%20acc%20%2B%3D%20num%0Aprint%28acc%29&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false">Python Tutor</a>
+
+</td><td>
+
+```python
+def process(nums):
+    if nums:
+        num, *nums = nums
+        return num + process(nums)
+    else:
+        return 0
+```
+
+</td><td>
+
+```python
+def process(container, acc=0):
+    match container:
+        case []:
+            return acc
+        case [num, *nums]:
+            return process(nums, num+acc)
+```
+
+</td></tr>
+
+</table>
 
 ---
+
+## 2 Implementations of Conditional
+
 
 ---
 
