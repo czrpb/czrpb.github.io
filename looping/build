@@ -13,7 +13,11 @@ echo ""
 
 echo "Moving PNGs...."
 cp -v *.png ../docs/prog-lang/looping/
-
 echo ""
+
+echo "Moving PDFs...."
+cp -v *.pdf ../docs/prog-lang/looping/
+echo ""
+
 echo "tar up files...."
-tar vzcf looping.tar.gz build *.md *.png
+tar vzcf looping.tar.gz build *.md *.png *.pdf
