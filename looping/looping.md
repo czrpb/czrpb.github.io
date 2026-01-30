@@ -307,12 +307,12 @@ def first_sqrt(nums):
 
 <div class="code-container">
 
-<a href="https://pythontutor.com/visualize.html#code=import%20math%0A%0Adef%20first_sqrt%28nums%29%3A%0A%20%20%20%20next%28%0A%20%20%20%20%20%20%20%20%28num%0A%20%20%20%20%20%20%20%20%20for%20num%20in%20nums%0A%20%20%20%20%20%20%20%20%20if%20math.sqrt%28num%29.is_integer%28%29%0A%20%20%20%20%20%20%20%20%29%2C%0A%20%20%20%20%20%20%20%20None%0A%20%20%20%20%29%0A%20%20%20%20%0Aprint%28first_sqrt%28range%2810%2C26%29%29%29&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a>
+<a href="https://pythontutor.com/visualize.html#code=import%20math%0A%0Adef%20first_sqrt%28nums%29%3A%0A%20%20%20%20return%20next%28%0A%20%20%20%20%20%20%20%20%28num%0A%20%20%20%20%20%20%20%20%20for%20num%20in%20nums%0A%20%20%20%20%20%20%20%20%20if%20math.sqrt%28num%29.is_integer%28%29%0A%20%20%20%20%20%20%20%20%29%2C%0A%20%20%20%20%20%20%20%20None%0A%20%20%20%20%29%0A%20%20%20%20%0Aprint%28first_sqrt%28range%2810%2C26%29%29%29&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a>
 
 <div style="background: #2b2d33; text-align: left; font-family: Consolas; font-size: 9pt;">
 
 def first_sqrt(nums):
-&nbsp;&nbsp;&nbsp;&nbsp;next(
+&nbsp;&nbsp;&nbsp;&nbsp;return next(
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(num
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for num in nums
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if math.sqrt(num).is_integer()
@@ -369,7 +369,7 @@ def first_sqrt(nums):
 
 <br/>
 
-<a href="claude-report-from-discussion.pdf">Claude's Report of Our Conversation</a>
+<a style="font-size: 20pt;" href="claude-report-from-discussion.pdf">Claude's Report of Our Conversation</a>
 
 ---
 
