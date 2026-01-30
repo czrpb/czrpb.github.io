@@ -41,6 +41,10 @@ style: |
     font-size: 18pt;
   }
 
+  blockquote {
+    font-size: 22pt;
+  }
+  
   footer {
     left: auto;
     right: auto;
@@ -353,18 +357,15 @@ def first_sqrt(nums):
 
 ---
 
-<p align="left">Use `for` when:</p>
+<p align="left">Use <tt>for</tt> when:</p>
 
-- Have a collection/iterable
-- Processing a `list`
+> You are operating on a collection or iterable. You should be acting on each item. You are done when you have acted on the whole list.
 
 <br/>
 
-<p align="left">Use `while` when:</p>
+<p align="left">Use <tt>while</tt> when:</p>
 
-- Checking a condition
-- Searching
-- "Early exit"
+> You are check a condition or state. You should be acting while the condition is unchanged. You are done when the condition changes.
 
 <br/>
 
