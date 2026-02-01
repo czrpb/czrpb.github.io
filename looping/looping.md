@@ -105,7 +105,8 @@ Quentin Crain
 
 ## Agenda
 
-- What / Why Loop?
+- Why Loop?
+- What is a Loop?
 - 2 Purposes for Looping
 - 3 Implementations of Iteration
 - 2 Implementations of Conditional
@@ -116,14 +117,22 @@ Quentin Crain
 
 ---
 
-## What / Why Loop?
+## Why Loop?
+
+<img src="why_loop.png" width="600" />
+
+<p>
+
+**Because I need to do the same thing again!**
+
+</p>
+
+---
+
+## What is a Loop?
 
 <table width="100%" style="font-size: 22pt;">
-<tr><th colspan="2">
-
-Because I need to do (nearly) the same thing again!
-
-</th></tr><tr><td>
+<tr><td>
 
 Find all the keys (files) in a directory
 
@@ -134,11 +143,11 @@ Check to see if my device has powered on
 </td></tr>
 </table>
 
-Are these the same?
+**Are these the same?**
 
 ---
 
-## What is My Intent?
+## It's All About Intent!
 
 <img src="intent.png" width="600" />
 
