@@ -1,0 +1,74 @@
+<!-- TIMER WIDGET - Copy everything between the TIMER START/END comments -->
+<!-- TIMER START -->
+<div id="timer-widget" style="
+  position:fixed; bottom:12px; right:12px;
+  width:180px; height:80px;
+  font-family:monospace; font-size:28px;
+  background:#1a1a2e; color:#0f0; border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  user-select:none; z-index:9999;
+">
+  <div id="timer-display" style="
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    transition:opacity .2s;
+  ">00:00</div>
+
+  <div id="timer-controls" style="
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center; gap:6px;
+    opacity:0; transition:opacity .2s;
+    background:rgba(26,26,46,.85); border-radius:8px;
+  ">
+    <input id="timer-min" type="number" min="0" max="99" value="5" style="
+      width:36px; height:28px; text-align:center;
+      background:#0d0d1a; color:#0f0; border:1px solid #0f0;
+      border-radius:4px; font:16px monospace;
+    ">
+    <span style="color:#0f0;font-size:16px">:</span>
+    <input id="timer-sec" type="number" min="0" max="59" value="0" style="
+      width:36px; height:28px; text-align:center;
+      background:#0d0d1a; color:#0f0; border:1px solid #0f0;
+      border-radius:4px; font:16px monospace;
+    ">
+    <button id="timer-btn" style="
+      padding:4px 10px; font:bold 13px monospace;
+      background:#0f0; color:#1a1a2e; border:none;
+      border-radius:4px; cursor:pointer;
+    ">GO</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  const w=document.getElementById('timer-widget'),
+        d=document.getElementById('timer-display'),
+        c=document.getElementById('timer-controls'),
+        b=document.getElementById('timer-btn'),
+        mIn=document.getElementById('timer-min'),
+        sIn=document.getElementById('timer-sec');
+  let iv=null, left=0, running=false;
+
+  w.onmouseenter=()=>{ c.style.opacity='1'; d.style.opacity='.15'; };
+  w.onmouseleave=()=>{ c.style.opacity='0'; d.style.opacity='1'; };
+
+  function fmt(s){ return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
+
+  function tick(){
+    if(left<=0){ clearInterval(iv); iv=null; running=false; b.textContent='GO';
+      d.style.color='#f44'; d.textContent='00:00'; return; }
+    left--; d.textContent=fmt(left);
+    if(left<=10) d.style.color='#f44';
+  }
+
+  b.onclick=()=>{
+    if(running){ clearInterval(iv); iv=null; running=false; b.textContent='GO'; return; }
+    left=(parseInt(mIn.value)||0)*60+(parseInt(sIn.value)||0);
+    if(left<=0) return;
+    d.style.color='#0f0'; d.textContent=fmt(left);
+    running=true; b.textContent='■';
+    iv=setInterval(tick,1000);
+  };
+})();
+</script>
+<!-- TIMER END -->

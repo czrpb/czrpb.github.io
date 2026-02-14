@@ -3,4 +3,5 @@
 Thoughts on topics:
 
 * [Programming & Languages](prog-lang)
+* [Data Science](ds)
 * (Social) Network Analysis
