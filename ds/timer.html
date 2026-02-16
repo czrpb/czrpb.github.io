@@ -1,73 +1,137 @@
 <!-- TIMER WIDGET - Copy everything between the TIMER START/END comments -->
 <!-- TIMER START -->
-<div id="timer-widget" style="
-  position:fixed; bottom:12px; right:12px;
-  width:180px; height:80px;
-  font-family:monospace; font-size:28px;
-  background:#1a1a2e; color:#0f0; border-radius:8px;
-  display:flex; align-items:center; justify-content:center;
-  user-select:none; z-index:9999;
-">
-  <div id="timer-display" style="
-    position:absolute; inset:0;
-    display:flex; align-items:center; justify-content:center;
-    transition:opacity .2s;
-  ">00:00</div>
+<style>
+  #timer-widget {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    width: 180px;
+    height: 80px;
+    font-family: monospace;
+    background: #1a1a2e;
+    border-radius: 8px;
+    z-index: 9999;
+    user-select: none;
+  }
 
-  <div id="timer-controls" style="
-    position:absolute; inset:0;
-    display:flex; align-items:center; justify-content:center; gap:6px;
-    opacity:0; transition:opacity .2s;
-    background:rgba(26,26,46,.85); border-radius:8px;
-  ">
-    <input id="timer-min" type="number" min="0" max="99" value="5" style="
-      width:36px; height:28px; text-align:center;
-      background:#0d0d1a; color:#0f0; border:1px solid #0f0;
-      border-radius:4px; font:16px monospace;
-    ">
-    <span style="color:#0f0;font-size:16px">:</span>
-    <input id="timer-sec" type="number" min="0" max="59" value="0" style="
-      width:36px; height:28px; text-align:center;
-      background:#0d0d1a; color:#0f0; border:1px solid #0f0;
-      border-radius:4px; font:16px monospace;
-    ">
-    <button id="timer-btn" style="
-      padding:4px 10px; font:bold 13px monospace;
-      background:#0f0; color:#1a1a2e; border:none;
-      border-radius:4px; cursor:pointer;
-    ">GO</button>
+  #timer-display {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #0f0;
+    transition: opacity .2s;
+  }
+
+  #timer-controls {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    opacity: 0;
+    transition: opacity .2s;
+    background: rgba(26, 26, 46, .85);
+    border-radius: 8px;
+  }
+
+  #timer-widget:hover #timer-controls { opacity: 1; }
+  #timer-widget:hover #timer-display  { opacity: .15; }
+
+  #timer-min, #timer-sec {
+    width: 36px;
+    height: 28px;
+    text-align: center;
+    background: #0d0d1a;
+    color: #0f0;
+    border: 1px solid #0f0;
+    border-radius: 4px;
+    font: 16px monospace;
+  }
+
+  #timer-controls span {
+    color: #0f0;
+    font-size: 16px;
+  }
+
+  .timer-btn {
+    padding: 4px 10px;
+    font: bold 13px monospace;
+    background: #0f0;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 32px;
+  }
+
+  .timer-btn:hover {
+    filter: brightness(1.2);
+  }
+
+  #timer-pause {
+    display: none;
+    background: #fa0;
+  }
+</style>
+
+<div id="timer-widget">
+  <div id="timer-display">00:00</div>
+  <div id="timer-controls">
+    <input id="timer-min" type="number" min="0" max="99" value="5">
+    <span>:</span>
+    <input id="timer-sec" type="number" min="0" max="59" value="0">
+    <button id="timer-go" class="timer-btn">GO</button>
+    <button id="timer-pause" class="timer-btn">&#10074;&#10074;</button>
   </div>
 </div>
 
 <script>
 (function(){
-  const w=document.getElementById('timer-widget'),
-        d=document.getElementById('timer-display'),
-        c=document.getElementById('timer-controls'),
-        b=document.getElementById('timer-btn'),
-        mIn=document.getElementById('timer-min'),
-        sIn=document.getElementById('timer-sec');
-  let iv=null, left=0, running=false;
+  const d  = document.getElementById('timer-display'),
+        go = document.getElementById('timer-go'),
+        pa = document.getElementById('timer-pause'),
+        mIn= document.getElementById('timer-min'),
+        sIn= document.getElementById('timer-sec');
+  let iv=null, left=0, running=false, paused=false;
 
-  w.onmouseenter=()=>{ c.style.opacity='1'; d.style.opacity='.15'; };
-  w.onmouseleave=()=>{ c.style.opacity='0'; d.style.opacity='1'; };
+  function fmt(s){
+    return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+  }
 
-  function fmt(s){ return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
+  function stop(){
+    clearInterval(iv); iv=null;
+    running=false; paused=false;
+    go.textContent='GO'; pa.style.display='none';
+  }
 
   function tick(){
-    if(left<=0){ clearInterval(iv); iv=null; running=false; b.textContent='GO';
-      d.style.color='#f44'; d.textContent='00:00'; return; }
+    if(left<=0){ stop(); d.style.color='#f44'; d.textContent='00:00'; return; }
     left--; d.textContent=fmt(left);
     if(left<=10) d.style.color='#f44';
   }
 
-  b.onclick=()=>{
-    if(running){ clearInterval(iv); iv=null; running=false; b.textContent='GO'; return; }
+  go.onclick=function(){
+    if(running){ stop(); return; }
     left=(parseInt(mIn.value)||0)*60+(parseInt(sIn.value)||0);
     if(left<=0) return;
     d.style.color='#0f0'; d.textContent=fmt(left);
-    running=true; b.textContent='■';
+    running=true; paused=false;
+    go.textContent='\u25A0'; pa.style.display='inline-block';
     iv=setInterval(tick,1000);
+  };
+
+  pa.onclick=function(){
+    if(paused){
+      paused=false; pa.innerHTML='&#10074;&#10074;'; pa.style.background='#fa0';
+      iv=setInterval(tick,1000);
+    } else {
+      paused=true; pa.textContent='\u25B6'; pa.style.background='#0af';
+      clearInterval(iv); iv=null;
+    }
   };
 })();
 </script>
