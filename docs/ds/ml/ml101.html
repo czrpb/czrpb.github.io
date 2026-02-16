@@ -1510,7 +1510,10 @@ code {
 }
 " lang="en-US" class="invert" data-marpit-pagination="9" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
 ;" data-marpit-pagination-total="11" data-size="16:9">
-<h1 id="timer-has-begun">Timer Has Begun!</h1>
+<h1 id="penguin-dataset">Penguin Dataset</h1>
+<p>The penguin dataset is the &quot;Hello World&quot; for kNN learning.</p>
+<p>Get it here: <a href="https://allisonhorst.github.io/palmerpenguins/">https://allisonhorst.github.io/palmerpenguins/</a></p>
+<p>(Good repo for ML datasets: <a href="https://archive.ics.uci.edu/">https://archive.ics.uci.edu/</a> )</p>
 <div id="timer-widget">
   <div id="timer-display">00:00</div>
   <div id="timer-controls">
@@ -1518,7 +1521,7 @@ code {
     <span>:</span>
     <input id="timer-sec" type="number" min="0" max="59" value="0" />
     <button id="timer-go" class="timer-btn">GO</button>
-    <button id="timer-pause" class="timer-btn">&#10074;&#10074;</button>
+    <button id="timer-pause" class="timer-btn">&#9678;</button>
   </div>
 </div>
 <script>
@@ -1558,7 +1561,7 @@ code {
 
   pa.onclick=function(){
     if(paused){
-      paused=false; pa.innerHTML='&#10074;&#10074;'; pa.style.background='#fa0';
+      paused=false; pa.innerHTML='&#9678;'; pa.style.background='#fa0';
       iv=setInterval(tick,1000);
     } else {
       paused=true; pa.textContent='\u25B6'; pa.style.background='#0af';
