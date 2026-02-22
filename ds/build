@@ -7,6 +7,10 @@ echo ""
 echo "Generate MARP files...."
 for f in ml101
     echo marp --html $f.md -o ../docs/ds/ml/$f.html
+    marp --html --allow-local-files $f.md -o $f.pdf
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$f-shrunk.pdf $f.pdf
+    eza -l $f*.pdf
+    mv $f-shrunk.pdf $f.pdf
     marp --html $f.md -o ../docs/ds/ml/$f.html
 end
 echo ""
