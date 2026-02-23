@@ -26,6 +26,7 @@ echo ""
 echo "Moving other files...."
 cp -v *.csv ../docs/ds/ml/
 cp -v *.py ../docs/ds/ml/
+cp -v *.js ../docs/ds/ml/
 echo ""
 
 echo "tar up files...."
