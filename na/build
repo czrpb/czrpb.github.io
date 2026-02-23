@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+
+for f (na101 na102 na103) do
+    echo marp --html learning/${f}.md -o ../docs/na/${f}.html
+    marp --html learning/${f}.md -o ../docs/na/${f}.html
+done
