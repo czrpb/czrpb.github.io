@@ -2,7 +2,7 @@ import sys
 import plotly.express as px
 import pandas as pd
 
-csv_path = sys.argv[1] if len(sys.argv) > 1 else "penguins.csv"
+csv_path = sys.argv[1] if len(sys.argv) > 1 else "viz.csv"
 
 df = pd.read_csv(
     csv_path,
