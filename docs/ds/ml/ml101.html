@@ -166,10 +166,14 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="1" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
+;" data-marpit-pagination-total="21" data-size="16:9">
 <h1 id="machine-learning-101">Machine Learning 101</h1>
 <h2 id="knn-speed-run">kNN Speed Run</h2>
 <h5 id="quentin-crain">Quentin Crain</h5>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', });
+</script>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -329,7 +333,7 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="2" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
+;" data-marpit-pagination-total="21" data-size="16:9">
 <h2 id="agenda">Agenda</h2>
 <ul>
 <li>What is ML?</li>
@@ -337,7 +341,7 @@ code {
 <li>Let's Do It!</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-marpit-fragments="3" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
 
 a {
@@ -495,35 +499,31 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="3" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="topics">Topics</h2>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="what-is-machine-learning">What is Machine Learning?</h2>
+<p>&quot;Learn&quot; from data to<br />
+<em>infer</em>/<em>generalize</em>/<em>predict</em><br />
+labels for new data.</p>
 <ul>
-<li>
-<p>Machine Learning (ML): <a href="https://en.wikipedia.org/wiki/Machine_learning">https://en.wikipedia.org/wiki/Machine_learning</a></p>
+<li data-marpit-fragment="1"><em><strong>Supervised</strong></em>: <strong>Label</strong> new data given a labeled <strong>dataset</strong> from a set of <strong>features</strong>.
 <ul>
-<li><a href="https://developers.google.com/machine-learning/crash-course">https://developers.google.com/machine-learning/crash-course</a></li>
-<li><a href="https://www.coursera.org/articles/what-is-machine-learning">https://www.coursera.org/articles/what-is-machine-learning</a></li>
-<li><a href="https://www.geeksforgeeks.org/machine-learning/ml-machine-learning/">https://www.geeksforgeeks.org/machine-learning/ml-machine-learning/</a><br />
- </li>
+<li>Ex: Regression (linear), Classification (kNN, ...), Decision Trees, SVM</li>
 </ul>
 </li>
-<li>
-<p>kNN: <a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm</a></p>
+<li data-marpit-fragment="2"><em><strong>Unsupervised</strong></em>: <strong>Label</strong> new data based on similarity/difference to a unlabeled <strong>dataset</strong> from a set of <strong>features</strong>.
 <ul>
-<li><a href="https://www.geeksforgeeks.org/machine-learning/k-nearest-neighbours/">https://www.geeksforgeeks.org/machine-learning/k-nearest-neighbours/</a></li>
-<li><a href="https://towardsdatascience.com/k-nearest-neighbor-classifier-explained-a-visual-guide-with-code-examples-for-beginners-a3d85cad00e1/">https://towardsdatascience.com/k-nearest-neighbor-classifier-explained-a-visual-guide-with-code-examples-for-beginners-a3d85cad00e1/</a><br />
- </li>
+<li>Ex: Clustering (k-means, PCA)</li>
 </ul>
 </li>
-<li>
-<p><code>plotly</code>: <a href="https://plotly.com/">https://plotly.com/</a></p>
-</li>
-<li>
-<p>Scatter plot: <a href="https://en.wikipedia.org/wiki/Scatter_plot">https://en.wikipedia.org/wiki/Scatter_plot</a></p>
+<li data-marpit-fragment="3"><em><strong>Reinforcement</strong></em>: Create a <strong>policy</strong> to achieve a <strong>goal</strong> through <strong>rewards</strong>.
+<ul>
+<li>Ex: NNs (CNN, RNN,), aka &quot;AI&quot;</li>
+</ul>
 </li>
 </ul>
+<p><a href="https://ischool.syracuse.edu/what-is-machine-learning/">https://ischool.syracuse.edu/what-is-machine-learning/</a></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-marpit-fragments="3" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
 
 a {
@@ -681,29 +681,15 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="4" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="what-is-machine-learning">What is Machine Learning?</h2>
-<p>&quot;Learn&quot; from data to<br />
-<em>infer</em>/<em>generalize</em>/<em>predict</em><br />
-labels for new data.</p>
-<ul>
-<li data-marpit-fragment="1"><em><strong>Supervised</strong></em>: <strong>Label</strong> new data given a labeled <strong>dataset</strong> from a set of <strong>features</strong>.
-<ul>
-<li>Ex: Regression (linear), Classification (kNN, ...), Decision Trees, SVM</li>
-</ul>
-</li>
-<li data-marpit-fragment="2"><em><strong>Unsupervised</strong></em>: <strong>Label</strong> new data based on similarity/difference to a unlabeled <strong>dataset</strong> from a set of <strong>features</strong>.
-<ul>
-<li>Ex: Clustering (k-means, PCA)</li>
-</ul>
-</li>
-<li data-marpit-fragment="3"><em><strong>Reinforcement</strong></em>: Create a <strong>policy</strong> to achieve a <strong>goal</strong> through <strong>rewards</strong>.
-<ul>
-<li>Ex: NNs (CNN, RNN,), aka &quot;AI&quot;</li>
-</ul>
-</li>
-</ul>
-<p><a href="https://ischool.syracuse.edu/what-is-machine-learning/">https://ischool.syracuse.edu/what-is-machine-learning/</a></p>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="what-is-knn">What is kNN?</h2>
+<p><strong>It is a classification algorithm.</strong></p>
+<br />
+<blockquote>
+<p>A machine learning (ML) algorithm whereby<br />
+data is &quot;classified&quot;, ie: <em>labeled</em>, using<br />
+existing labeled data.</p>
+</blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -863,15 +849,10 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="5" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="what-is-knn">What is kNN?</h2>
-<p><strong>It is a classification algorithm.</strong></p>
-<br />
-<blockquote>
-<p>A machine learning (ML) algorithm whereby<br />
-data is &quot;classified&quot;, ie: <em>labeled</em>, using<br />
-existing labeled data.</p>
-</blockquote>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="what-is-classification">What is Classification?</h2>
+<p>Dataset</p>
+<p><img src="donuts.png" width="480" /><img src="tires.png" width="480" /></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -1031,10 +1012,23 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="6" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="what-is-classification">What is Classification?</h2>
-<p>Dataset</p>
-<p><img src="donuts.png" width="480" /><img src="tires.png" width="480" /></p>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h3 id="classify-this">Classify This!</h3>
+<p>Ready?</p>
+<div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; width: 100%; gap: 10px;">
+<div data-marpit-fragment="1" style="grid-column: 1; grid-row: 1;">
+<img src="tire-donut.png" width="480" />
+</div>
+<div data-marpit-fragment="2" style="grid-column: 1; grid-row: 2;">
+tire
+</div>
+<div data-marpit-fragment="3" style="grid-column: 2; grid-row: 1;">
+<img src="donut-tire.png" width="480" />
+</div>
+<div data-marpit-fragment="4" style="grid-column: 2; grid-row: 2;">
+donut
+</div>
+</div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -1194,22 +1188,11 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="7" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h3 id="classify-this">Classify This!</h3>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h3 id="classification-level-extreme">Classification Level: Extreme!</h3>
 <p>Ready?</p>
-<div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; width: 100%; gap: 10px;">
-<div data-marpit-fragment="1" style="grid-column: 1; grid-row: 1;">
-<img src="tire-donut.png" width="480" />
-</div>
-<div data-marpit-fragment="2" style="grid-column: 1; grid-row: 2;">
-tire
-</div>
-<div data-marpit-fragment="3" style="grid-column: 2; grid-row: 1;">
-<img src="donut-tire.png" width="480" />
-</div>
-<div data-marpit-fragment="4" style="grid-column: 2; grid-row: 2;">
-donut
-</div>
+<div data-marpit-fragment>
+<img src="xmas-tree.png" width="480" />
 </div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
@@ -1370,12 +1353,9 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="8" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h3 id="classification-level-extreme">Classification Level: Extreme!</h3>
-<p>Ready?</p>
-<div data-marpit-fragment>
-<img src="xmas-tree.png" width="480" />
-</div>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="lets-do-it">Let's Do It!</h2>
+<p>We are going to classify penguins!</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -1535,9 +1515,11 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="9" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="lets-do-it">Let's Do It!</h2>
-<p>We are going to classify penguins!</p>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="define-your-question">Define Your Question</h2>
+<br />
+<h3 id="lost-penguin">Lost Penguin!!!</h3>
+<p>I found this penguin, who are their pals?</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -1697,11 +1679,23 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="10" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="define-your-question">Define Your Question</h2>
-<br />
-<h3 id="lost-penguin">Lost Penguin!!!</h3>
-<p>I found this penguin, who are their pals?</p>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="penguin-dataset">Penguin Dataset</h2>
+<p>The penguin dataset is the &quot;Hello World&quot; for kNN learning.</p>
+<p><a href="penguins_raw.csv">penguins_raw.csv</a></p>
+<p>(Good repo for ML datasets: <a href="https://archive.ics.uci.edu/">https://archive.ics.uci.edu/</a> )</p>
+<div id="timer-widget" class="timer-widget">
+  <div id="timer-display" class="timer-display">00:00</div>
+  <div id="timer-controls" class="timer-controls">
+      <input id="timer-min" class="timer-min" type="number" min="0" max="99" value="5" />
+    <span>:</span>
+    <input id="timer-sec" class="timer-sec" type="number" min="0" max="59" value="0" />
+    <button id="timer-go" class="timer-go timer-btn">GO</button>
+    <button id="timer-pause" class="timer-pause timer-btn">&#9678;</button>
+  </div>
+</div>
+<script src="./timer1.js"></script>
+<script src="./timer-shared.js"></script>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -1861,22 +1855,36 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="11" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="penguin-dataset">Penguin Dataset</h2>
-<p>The penguin dataset is the &quot;Hello World&quot; for kNN learning.</p>
-<p><a href="penguins_raw.csv">penguins_raw.csv</a></p>
-<p>(Good repo for ML datasets: <a href="https://archive.ics.uci.edu/">https://archive.ics.uci.edu/</a> )</p>
-<div id="timer-widget" class="timer-widget">
-  <div id="timer-display" class="timer-display">00:00</div>
-  <div id="timer-controls" class="timer-controls">
-      <input id="timer-min" class="timer-min" type="number" min="0" max="99" value="5" />
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="extract-features--clean">Extract Features &amp; Clean</h2>
+<div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto; width: 100%; gap: 10px;">
+<div style="grid-column: 1; grid-row: 1;">
+Extract 4 features,
+<p>2 of your choice:</p>
+<ol>
+<li>Species</li>
+<li>Sex</li>
+<li><em>Choice 1</em></li>
+<li><em>Choice 2</em></li>
+</ol>
+<br />
+<p>Clean file: <code>penguins_clean.csv</code></p>
+</div>
+<div style="grid-column: 2; grid-row: 1;">
+<img src="features.png" width="480" />
+</div>
+</div>
+<div id="timer-widget-1" class="timer-widget">
+  <div id="timer-display-1" class="timer-display">00:00</div>
+  <div id="timer-controls-1" class="timer-controls">
+      <input id="timer-min-1" class="timer-min" type="number" min="0" max="99" value="5" />
     <span>:</span>
-    <input id="timer-sec" class="timer-sec" type="number" min="0" max="59" value="0" />
-    <button id="timer-go" class="timer-go timer-btn">GO</button>
-    <button id="timer-pause" class="timer-pause timer-btn">&#9678;</button>
+    <input id="timer-sec-1" class="timer-sec" type="number" min="0" max="59" value="0" />
+    <button id="timer-go-1" class="timer-go timer-btn">GO</button>
+    <button id="timer-pause-1" class="timer-pause timer-btn">&#9678;</button>
   </div>
 </div>
-<script src="./timer1.js"></script>
+<script src="./timer2.js"></script>
 <script src="./timer-shared.js"></script>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
@@ -2037,36 +2045,38 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="12" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="extract-features--clean">Extract Features &amp; Clean</h2>
-<div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto; width: 100%; gap: 10px;">
-<div style="grid-column: 1; grid-row: 1;">
-Extract 4 features,
-<p>2 of your choice:</p>
-<ol>
-<li>Species</li>
-<li>Sex</li>
-<li><em>Choice 1</em></li>
-<li><em>Choice 2</em></li>
-</ol>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="divide-your-data">Divide Your Data</h2>
+<p>You need 3 datasets in ML projects:</p>
 <br />
-<p>Clean file: <code>penguins_clean.csv</code></p>
-</div>
-<div style="grid-column: 2; grid-row: 1;">
-<img src="features.png" width="480" />
-</div>
-</div>
-<div id="timer-widget-1" class="timer-widget">
-  <div id="timer-display-1" class="timer-display">00:00</div>
-  <div id="timer-controls-1" class="timer-controls">
-      <input id="timer-min-1" class="timer-min" type="number" min="0" max="99" value="5" />
+<ul>
+<li><em><strong>Training</strong></em>: This is your known good data to build your model on/with.
+<ul>
+<li>70% of your records</li>
+</ul>
+</li>
+<li><em><strong>Validation</strong></em>: This the small subset of known good data to verify your model's goodness.
+<ul>
+<li>20% of your records</li>
+</ul>
+</li>
+<li><em><strong>Test</strong></em>: This the data for your model to label/predict.
+<ul>
+<li>10% of your records</li>
+</ul>
+</li>
+</ul>
+<div id="timer-widget-2" class="timer-widget">
+  <div id="timer-display-2" class="timer-display">00:00</div>
+  <div id="timer-controls-2" class="timer-controls">
+      <input id="timer-min-2" class="timer-min" type="number" min="0" max="99" value="5" />
     <span>:</span>
-    <input id="timer-sec-1" class="timer-sec" type="number" min="0" max="59" value="0" />
-    <button id="timer-go-1" class="timer-go timer-btn">GO</button>
-    <button id="timer-pause-1" class="timer-pause timer-btn">&#9678;</button>
+    <input id="timer-sec-2" class="timer-sec" type="number" min="0" max="59" value="0" />
+    <button id="timer-go-2" class="timer-go timer-btn">GO</button>
+    <button id="timer-pause-2" class="timer-pause timer-btn">&#9678;</button>
   </div>
 </div>
-<script src="./timer2.js"></script>
+<script src="./timer3.js"></script>
 <script src="./timer-shared.js"></script>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
@@ -2227,38 +2237,26 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="13" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="divide-your-data">Divide Your Data</h2>
-<p>You need 3 datasets in ML projects:</p>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="visualize-your-validation-data">Visualize Your Validation Data</h2>
 <br />
+<p>Explore your validation data:</p>
 <ul>
-<li><em><strong>Training</strong></em>: This is your known good data to build your model on/with.
-<ul>
-<li>70% of your records</li>
+<li><a href="https://plotly.com/python/px-arguments/#passing-dictionaries-or-arraylikes-as-the-dataframe-argument">https://plotly.com/python/px-arguments/#passing-dictionaries-or-arraylikes-as-the-dataframe-argument</a></li>
+<li><a href="https://plotly.com/python/line-and-scatter/#setting-size-and-color-with-column-names">https://plotly.com/python/line-and-scatter/#setting-size-and-color-with-column-names</a></li>
 </ul>
-</li>
-<li><em><strong>Validation</strong></em>: This the small subset of known good data to verify your model's goodness.
-<ul>
-<li>20% of your records</li>
-</ul>
-</li>
-<li><em><strong>Test</strong></em>: This the data for your model to label/predict.
-<ul>
-<li>10% of your records</li>
-</ul>
-</li>
-</ul>
-<div id="timer-widget-2" class="timer-widget">
-  <div id="timer-display-2" class="timer-display">00:00</div>
-  <div id="timer-controls-2" class="timer-controls">
-      <input id="timer-min-2" class="timer-min" type="number" min="0" max="99" value="5" />
+<p>Start here: <a href="viz.py">viz.py</a> <a href="viz.csv">viz.csv</a></p>
+<div id="timer-widget-3" class="timer-widget">
+  <div id="timer-display-3" class="timer-display">00:00</div>
+  <div id="timer-controls-3" class="timer-controls">
+      <input id="timer-min-3" class="timer-min" type="number" min="0" max="99" value="5" />
     <span>:</span>
-    <input id="timer-sec-2" class="timer-sec" type="number" min="0" max="59" value="0" />
-    <button id="timer-go-2" class="timer-go timer-btn">GO</button>
-    <button id="timer-pause-2" class="timer-pause timer-btn">&#9678;</button>
+    <input id="timer-sec-3" class="timer-sec" type="number" min="0" max="59" value="0" />
+    <button id="timer-go-3" class="timer-go timer-btn">GO</button>
+    <button id="timer-pause-3" class="timer-pause timer-btn">&#9678;</button>
   </div>
 </div>
-<script src="./timer3.js"></script>
+<script src="./timer4.js"></script>
 <script src="./timer-shared.js"></script>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
@@ -2419,27 +2417,16 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="14" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="visualize-your-validation-data">Visualize Your Validation Data</h2>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="knn-the-intuition">kNN: The Intuition</h2>
 <br />
-<p>Explore your validation data:</p>
-<ul>
-<li><a href="https://plotly.com/python/px-arguments/#passing-dictionaries-or-arraylikes-as-the-dataframe-argument">https://plotly.com/python/px-arguments/#passing-dictionaries-or-arraylikes-as-the-dataframe-argument</a></li>
-<li><a href="https://plotly.com/python/line-and-scatter/#setting-size-and-color-with-column-names">https://plotly.com/python/line-and-scatter/#setting-size-and-color-with-column-names</a></li>
-</ul>
-<p>Start here: <a href="viz.py">viz.py</a> <a href="viz.csv">viz.csv</a></p>
-<div id="timer-widget-3" class="timer-widget">
-  <div id="timer-display-3" class="timer-display">00:00</div>
-  <div id="timer-controls-3" class="timer-controls">
-      <input id="timer-min-3" class="timer-min" type="number" min="0" max="99" value="5" />
-    <span>:</span>
-    <input id="timer-sec-3" class="timer-sec" type="number" min="0" max="59" value="0" />
-    <button id="timer-go-3" class="timer-go timer-btn">GO</button>
-    <button id="timer-pause-3" class="timer-pause timer-btn">&#9678;</button>
-  </div>
-</div>
-<script src="./timer4.js"></script>
-<script src="./timer-shared.js"></script>
+<blockquote>
+<p>You are who you are nearest.</p>
+</blockquote>
+<br />
+<blockquote>
+<p>Birds of a feather flock together.</p>
+</blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -2599,11 +2586,60 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="15" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="knn-k-nearest-neighbors">kNN: k Nearest Neighbors</h2>
-<blockquote>
-<p>You are who you are nearest.</p>
-</blockquote>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="knn-the-math">kNN: The Math</h2>
+<br />
+<p>When a new entity is to be classified</p>
+<p>via the <strong>features</strong> under consideration</p>
+<p>&quot;distance&quot; implies similarity.</p>
+<div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; width: 100%; gap: 10px;">
+<div style="grid-column: 1; grid-row: 1;">
+<h4>Euclidean distance</h4>
+</div>
+<div style="grid-column: 2; grid-row: 1;">
+<h4>Manhattan distance</h4>
+</div>
+<div style="grid-column: 1; grid-row: 2;">
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mrow><mi>d</mi><mi>i</mi><mi>s</mi><msub><mi>t</mi><mi>x</mi></msub></mrow><mo stretchy="true">‾</mo></mover><mo>=</mo><msqrt><mrow><msub><mo>∑</mo><mi>n</mi></msub><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>⃗</mo></mover><mo>−</mo><mover accent="true"><msub><mi>y</mi><mi>n</mi></msub><mo>⃗</mo></mover><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow></mrow></msqrt></mrow><annotation encoding="application/x-tex">\overline{dist_x} = \sqrt{\sum_n{(\vec{x}-\vec{y_n})^2}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0444em;vertical-align:-0.15em;"></span><span class="mord overline"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8944em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.8144em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.3299em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9101em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.0017em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen">(</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span style="top:-2.8701em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.28em" viewBox="0 0 400000 1296" preserveAspectRatio="xMinYMin slice"><path d="M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3299em;"><span></span></span></span></span></span></span></span></span></p>
+</div>
+<div style="grid-column: 2; grid-row: 2;">
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mrow><mi>d</mi><mi>i</mi><mi>s</mi><msub><mi>t</mi><mi>x</mi></msub></mrow><mo stretchy="true">‾</mo></mover><mo>=</mo><msub><mo>∑</mo><mi>n</mi></msub><mrow><mi mathvariant="normal">∣</mi><mover accent="true"><mi>x</mi><mo>⃗</mo></mover><mo>−</mo><mover accent="true"><msub><mi>y</mi><mi>n</mi></msub><mo>⃗</mo></mover><mi mathvariant="normal">∣</mi></mrow></mrow><annotation encoding="application/x-tex">\overline{dist_x} = \sum_n{|\vec{x}-\vec{y_n}|}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0444em;vertical-align:-0.15em;"></span><span class="mord overline"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8944em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.8144em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0497em;vertical-align:-0.2997em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.0017em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord">∣</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span><span class="mord">∣</span></span></span></span></span></p>
+</div>
+</div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -2763,12 +2799,10 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="16" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="knn-the-intuition">kNN: The Intuition</h2>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="knn-vizualized">kNN: Vizualized</h2>
 <br />
-<p>When a new entity is to be classified</p>
-<p>via the <strong>features</strong> under consideration</p>
-<p>&quot;distance&quot; implies similarity.</p>
+<img src="distance.png" width="640" />
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -2928,57 +2962,25 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="17" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="knn-the-math">kNN: The Math</h2>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="classify-your-validation-data">Classify Your Validation Data</h2>
 <br />
-<div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; width: 100%; gap: 10px;">
-<div style="grid-column: 1; grid-row: 1;">
-<h4>Euclidean distance</h4>
+<p>Classify your validation against the training data.</p>
+<p>Code Your Distance Function.</p>
+<p>Compare (text or visual) against original validation.</p>
+<p>Start here: <a href="classify.py">classify.py</a> <a href="lost_penguin.csv">lost_penguin.csv</a></p>
+<div id="timer-widget-5" class="timer-widget">
+  <div id="timer-display-5" class="timer-display">00:00</div>
+  <div id="timer-controls-5" class="timer-controls">
+      <input id="timer-min-5" class="timer-min" type="number" min="0" max="99" value="5" />
+    <span>:</span>
+    <input id="timer-sec-5" class="timer-sec" type="number" min="0" max="59" value="0" />
+    <button id="timer-go-5" class="timer-go timer-btn">GO</button>
+    <button id="timer-pause-5" class="timer-pause timer-btn">&#9678;</button>
+  </div>
 </div>
-<div style="grid-column: 2; grid-row: 1;">
-<h4>Manhattan distance</h4>
-</div>
-<div style="grid-column: 1; grid-row: 2;">
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mrow><mi>d</mi><mi>i</mi><mi>s</mi><msub><mi>t</mi><mi>x</mi></msub></mrow><mo stretchy="true">‾</mo></mover><mo>=</mo><msqrt><mrow><msub><mo>∑</mo><mi>n</mi></msub><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>⃗</mo></mover><mo>−</mo><mover accent="true"><msub><mi>y</mi><mi>n</mi></msub><mo>⃗</mo></mover><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow></mrow></msqrt></mrow><annotation encoding="application/x-tex">\overline{dist_x} = \sqrt{\sum_n{(\vec{x}-\vec{y_n})^2}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0444em;vertical-align:-0.15em;"></span><span class="mord overline"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8944em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.8144em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.3299em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9101em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.0017em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen">(</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span style="top:-2.8701em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.28em" viewBox="0 0 400000 1296" preserveAspectRatio="xMinYMin slice"><path d="M263,681c0.7,0,18,39.7,52,119
-c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
-c340,-704.7,510.7,-1060.3,512,-1067
-l0 -0
-c4.7,-7.3,11,-11,19,-11
-H40000v40H1012.3
-s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
-c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
-s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
-c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
-M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3299em;"><span></span></span></span></span></span></span></span></span></p>
-</div>
-<div style="grid-column: 2; grid-row: 2;">
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mrow><mi>d</mi><mi>i</mi><mi>s</mi><msub><mi>t</mi><mi>x</mi></msub></mrow><mo stretchy="true">‾</mo></mover><mo>=</mo><msub><mo>∑</mo><mi>n</mi></msub><mrow><mi mathvariant="normal">∣</mi><mover accent="true"><mi>x</mi><mo>⃗</mo></mover><mo>−</mo><mover accent="true"><msub><mi>y</mi><mi>n</mi></msub><mo>⃗</mo></mover><mi mathvariant="normal">∣</mi></mrow></mrow><annotation encoding="application/x-tex">\overline{dist_x} = \sum_n{|\vec{x}-\vec{y_n}|}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0444em;vertical-align:-0.15em;"></span><span class="mord overline"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8944em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.8144em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0497em;vertical-align:-0.2997em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.0017em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord">∣</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span><span class="mord">∣</span></span></span></span></span></p>
-</div>
-</div>
+<script src="./timer6.js"></script>
+<script src="./timer-shared.js"></script>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -3138,10 +3140,23 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="18" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="knn-vizualized">kNN: Vizualized</h2>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="classify-your-test-data">Classify Your Test Data</h2>
 <br />
-<img src="distance.png" width="640" />
+<p>Now time to classify your test data.</p>
+<p>Plot training and classified test data and analyze.</p>
+<div id="timer-widget-6" class="timer-widget">
+  <div id="timer-display-6" class="timer-display">00:00</div>
+  <div id="timer-controls-6" class="timer-controls">
+      <input id="timer-min-6" class="timer-min" type="number" min="0" max="99" value="5" />
+    <span>:</span>
+    <input id="timer-sec-6" class="timer-sec" type="number" min="0" max="59" value="0" />
+    <button id="timer-go-6" class="timer-go timer-btn">GO</button>
+    <button id="timer-pause-6" class="timer-pause timer-btn">&#9678;</button>
+  </div>
+</div>
+<script src="./timer7.js"></script>
+<script src="./timer-shared.js"></script>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -3301,20 +3316,17 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="19" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="code-your-distance-function">Code Your Distance Function</h2>
-<div id="timer-widget-4" class="timer-widget">
-  <div id="timer-display-4" class="timer-display">00:00</div>
-  <div id="timer-controls-4" class="timer-controls">
-      <input id="timer-min-4" class="timer-min" type="number" min="0" max="99" value="5" />
-    <span>:</span>
-    <input id="timer-sec-4" class="timer-sec" type="number" min="0" max="59" value="0" />
-    <button id="timer-go-4" class="timer-go timer-btn">GO</button>
-    <button id="timer-pause-4" class="timer-pause timer-btn">&#9678;</button>
-  </div>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h1 id="e-n-d">E  N  D</h1>
+<h2 id="a-data-science-project">A Data Science Project</h2>
+<div class="mermaid" style="background: white;">
+graph LR
+    Hypothesis --&gt; Observe
+    Observe --&gt; Explore
+    Explore --&gt; Split
+    Split --&gt; Train
+    Train --&gt; Label
 </div>
-<script src="./timer5.js"></script>
-<script src="./timer-shared.js"></script>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -3474,22 +3486,20 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="20" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="classify-your-validation-data">Classify Your Validation Data</h2>
-<p>Classify your validation against the training data.</p>
-<p>Compare (text or visual) against original validation.</p>
-<div id="timer-widget-5" class="timer-widget">
-  <div id="timer-display-5" class="timer-display">00:00</div>
-  <div id="timer-controls-5" class="timer-controls">
-      <input id="timer-min-5" class="timer-min" type="number" min="0" max="99" value="5" />
-    <span>:</span>
-    <input id="timer-sec-5" class="timer-sec" type="number" min="0" max="59" value="0" />
-    <button id="timer-go-5" class="timer-go timer-btn">GO</button>
-    <button id="timer-pause-5" class="timer-pause timer-btn">&#9678;</button>
-  </div>
-</div>
-<script src="./timer6.js"></script>
-<script src="./timer-shared.js"></script>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="readings">Readings</h2>
+<h3 id="pdfs">PDFs</h3>
+<ul>
+<li>This presentation <a href="ml101.pdf">ml101.pdf</a></li>
+<li>Early paper hinting towards kNN <a href="1951-NonparametricDiscriminationConsistencyProperties-FixHodges.pdf">1951-NonparametricDiscriminationConsistencyProperties-FixHodges.pdf</a></li>
+<li>First paper on kNN <a href="1967-NearestNeighborPatternClassification-Cover.pdf">1967-NearestNeighborPatternClassification-Cover.pdf</a></li>
+<li><a href="2023-KNNClassificationAReview-SyriopoulosKalampalikis.pdf">2023-KNNClassificationAReview-SyriopoulosKalampalikis.pdf</a></li>
+</ul>
+<h3 id="more-presentations">More Presentations</h3>
+<ul>
+<li><a href="ds101.html">DS 101</a></li>
+<li><a href="knn101.html">kNN 101</a></li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
@@ -3649,356 +3659,35 @@ code {
   background: #fa0;
 }
 " lang="en-US" class="invert" data-marpit-pagination="21" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="classify-your-test-data">Classify Your Test Data</h2>
-<p>Now time to classify your test data.</p>
-<p>Plot training and classified test data and analyze.</p>
-<div id="timer-widget-6" class="timer-widget">
-  <div id="timer-display-6" class="timer-display">00:00</div>
-  <div id="timer-controls-6" class="timer-controls">
-      <input id="timer-min-6" class="timer-min" type="number" min="0" max="99" value="5" />
-    <span>:</span>
-    <input id="timer-sec-6" class="timer-sec" type="number" min="0" max="59" value="0" />
-    <button id="timer-go-6" class="timer-go timer-btn">GO</button>
-    <button id="timer-pause-6" class="timer-pause timer-btn">&#9678;</button>
-  </div>
-</div>
-<script src="./timer7.js"></script>
-<script src="./timer-shared.js"></script>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
-@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
-
-a {
-  font-size: 17pt;
-}
-
-table {
-  margin: 0 25px 25px 15px;
-}
-
-tbody {
-  width: 100%;
-}
-
-.my-small-size {
-  font-size: 8pt;
-  margin: 0px;
-  padding: 0px;
-}
-
-.my-medium-size {
-  font-size: 12pt;
-  margin: 0px;
-  padding: 0px;
-}
-
-ul li {
-  font-size: 20pt;
-}
-
-ul li ul li {
-  font-size: 17pt;
-}
-
-blockquote {
-  font-size: 22pt;
-}
-
-footer {
-  left: auto;
-  right: auto;
-  top: auto;
-  bottom: auto;
-
-  right: 20px;
-  top: 20px;
-}
-
-.code-container {
-  position: relative;
-  margin: 0.1em 0;
-}
-
-.code-container pre {
-  margin: 0;
-  padding: 0.1em;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  overflow-x: auto;
-}
-
-code {
-  font-size: 0.5em;
-}
-
-.run-icon {
-  position: absolute;
-  top: 0.5em;
-  right: 0.5em;
-  color: white;
-  font-size: 12pt;
-  text-decoration: none;
-  z-index: 10;
-  transition: color 0.2s ease;
-}
-
-.run-icon:hover {
-  color: lightgreen;
-}
-
-.timer-widget {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  width: 180px;
-  height: 80px;
-  font-family: monospace;
-  background: #1a1a2e;
-  border-radius: 8px;
-  z-index: 9999;
-  user-select: none;
-}
-
-.timer-display {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  color: #0f0;
-  transition: opacity .2s;
-}
-
-.timer-controls {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  opacity: 0;
-  transition: opacity .2s;
-  background: rgba(26, 26, 46, .85);
-  border-radius: 8px;
-}
-
-.timer-widget:hover .timer-controls { opacity: 1; }
-.timer-widget:hover .timer-display  { opacity: .15; }
-
-.timer-min, .timer-sec {
-  width: 36px;
-  height: 28px;
-  text-align: center;
-  background: #0d0d1a;
-  color: #0f0;
-  border: 1px solid #0f0;
-  border-radius: 4px;
-  font: 16px monospace;
-}
-
-.timer-controls span {
-  color: #0f0;
-  font-size: 16px;
-}
-
-.timer-btn {
-  padding: 4px 10px;
-  font: bold 13px monospace;
-  background: #0f0;
-  color: #1a1a2e;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  min-width: 32px;
-}
-
-.timer-btn:hover {
-  filter: brightness(1.2);
-}
-
-.timer-pause {
-  display: none;
-  background: #fa0;
-}
-" lang="en-US" class="invert" data-marpit-pagination="22" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h1 id="e-n-d">E  N  D</h1>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-class="invert" data-paginate="true" data-theme="uncover" data-style="@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css';
-@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css';
-
-a {
-  font-size: 17pt;
-}
-
-table {
-  margin: 0 25px 25px 15px;
-}
-
-tbody {
-  width: 100%;
-}
-
-.my-small-size {
-  font-size: 8pt;
-  margin: 0px;
-  padding: 0px;
-}
-
-.my-medium-size {
-  font-size: 12pt;
-  margin: 0px;
-  padding: 0px;
-}
-
-ul li {
-  font-size: 20pt;
-}
-
-ul li ul li {
-  font-size: 17pt;
-}
-
-blockquote {
-  font-size: 22pt;
-}
-
-footer {
-  left: auto;
-  right: auto;
-  top: auto;
-  bottom: auto;
-
-  right: 20px;
-  top: 20px;
-}
-
-.code-container {
-  position: relative;
-  margin: 0.1em 0;
-}
-
-.code-container pre {
-  margin: 0;
-  padding: 0.1em;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  overflow-x: auto;
-}
-
-code {
-  font-size: 0.5em;
-}
-
-.run-icon {
-  position: absolute;
-  top: 0.5em;
-  right: 0.5em;
-  color: white;
-  font-size: 12pt;
-  text-decoration: none;
-  z-index: 10;
-  transition: color 0.2s ease;
-}
-
-.run-icon:hover {
-  color: lightgreen;
-}
-
-.timer-widget {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  width: 180px;
-  height: 80px;
-  font-family: monospace;
-  background: #1a1a2e;
-  border-radius: 8px;
-  z-index: 9999;
-  user-select: none;
-}
-
-.timer-display {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  color: #0f0;
-  transition: opacity .2s;
-}
-
-.timer-controls {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  opacity: 0;
-  transition: opacity .2s;
-  background: rgba(26, 26, 46, .85);
-  border-radius: 8px;
-}
-
-.timer-widget:hover .timer-controls { opacity: 1; }
-.timer-widget:hover .timer-display  { opacity: .15; }
-
-.timer-min, .timer-sec {
-  width: 36px;
-  height: 28px;
-  text-align: center;
-  background: #0d0d1a;
-  color: #0f0;
-  border: 1px solid #0f0;
-  border-radius: 4px;
-  font: 16px monospace;
-}
-
-.timer-controls span {
-  color: #0f0;
-  font-size: 16px;
-}
-
-.timer-btn {
-  padding: 4px 10px;
-  font: bold 13px monospace;
-  background: #0f0;
-  color: #1a1a2e;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  min-width: 32px;
-}
-
-.timer-btn:hover {
-  filter: brightness(1.2);
-}
-
-.timer-pause {
-  display: none;
-  background: #fa0;
-}
-" lang="en-US" class="invert" data-marpit-pagination="23" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
-;" data-marpit-pagination-total="23" data-size="16:9">
-<h2 id="readings">Readings</h2>
-<p><a href="ml101.pdf">ml101.pdf</a></p>
-<h3 id="pdfs">PDFs</h3>
+;" data-marpit-pagination-total="21" data-size="16:9">
+<h2 id="topics">Topics</h2>
 <ul>
-<li>This presentation <a href="ml101.pdf">ml101.pdf</a></li>
-<li>Early paper hinting towards kNN <a href="1951-NonparametricDiscriminationConsistencyProperties-FixHodges.pdf">1951-NonparametricDiscriminationConsistencyProperties-FixHodges.pdf</a></li>
-<li>First paper on kNN <a href="1967-NearestNeighborPatternClassification-Cover.pdf">1967-NearestNeighborPatternClassification-Cover.pdf</a></li>
-<li><a href="2023-KNNClassificationAReview-SyriopoulosKalampalikis.pdf">2023-KNNClassificationAReview-SyriopoulosKalampalikis.pdf</a></li>
+<li>
+<p>Machine Learning (ML): <a href="https://en.wikipedia.org/wiki/Machine_learning">https://en.wikipedia.org/wiki/Machine_learning</a></p>
+<ul>
+<li><a href="https://developers.google.com/machine-learning/crash-course">https://developers.google.com/machine-learning/crash-course</a></li>
+<li><a href="https://www.coursera.org/articles/what-is-machine-learning">https://www.coursera.org/articles/what-is-machine-learning</a></li>
+<li><a href="https://www.geeksforgeeks.org/machine-learning/ml-machine-learning/">https://www.geeksforgeeks.org/machine-learning/ml-machine-learning/</a><br />
+ </li>
 </ul>
-<h3 id="more-presentations">More Presentations</h3>
+</li>
+<li>
+<p>kNN: <a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm</a></p>
 <ul>
-<li><a href="ds101.html">DS 101</a></li>
-<li><a href="knn101.html">kNN 101</a></li>
+<li><a href="https://www.geeksforgeeks.org/machine-learning/k-nearest-neighbours/">https://www.geeksforgeeks.org/machine-learning/k-nearest-neighbours/</a></li>
+<li><a href="https://towardsdatascience.com/k-nearest-neighbor-classifier-explained-a-visual-guide-with-code-examples-for-beginners-a3d85cad00e1/">https://towardsdatascience.com/k-nearest-neighbor-classifier-explained-a-visual-guide-with-code-examples-for-beginners-a3d85cad00e1/</a><br />
+ </li>
+</ul>
+</li>
+<li>
+<p><code>plotly</code>: <a href="https://plotly.com/">https://plotly.com/</a></p>
+</li>
+<li>
+<p><code>panda</code>: <a href="https://pandas.pydata.org/">https://pandas.pydata.org/</a></p>
+</li>
+<li>
+<p>Scatter plot: <a href="https://en.wikipedia.org/wiki/Scatter_plot">https://en.wikipedia.org/wiki/Scatter_plot</a></p>
+</li>
 </ul>
 </section>
 <script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),h=Symbol();const g=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[h]||(Object.defineProperty(window,h,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await g()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const w=Symbol(),b=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();(o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o))&&a!==HTMLElement?i||customElements.define(s,r(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[w])return e[w];const i=v({target:e}),n=()=>{i(),delete e[w]},l=Object.assign(n,{cleanup:n,update:()=>b(e)});return Object.defineProperty(e,w,{configurable:!0,value:l}),l},y=document.currentScript;b(y?y.getRootNode():document)}();
