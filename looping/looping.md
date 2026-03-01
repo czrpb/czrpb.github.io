@@ -169,8 +169,8 @@ Condition
 
 <div style="background: #2b2d33; text-align: left; font-family: Consolas; font-size: 14pt;">
 
-for element in container:
-&nbsp;&nbsp;&nbsp;&nbsp;f(element)
+for element in collection:
+&nbsp;&nbsp;&nbsp;&nbsp;...
 
 </div>
 
@@ -178,9 +178,8 @@ for element in container:
 
 <div style="background: #2b2d33; text-align: left; font-family: Consolas; font-size: 14pt;">
 
-element, *container = container
-while cond(element):
-&nbsp;&nbsp;&nbsp;&nbsp;element, *container = container
+while COND and collection:
+&nbsp;&nbsp;&nbsp;&nbsp;...
 
 </div>
 
@@ -269,22 +268,20 @@ def process(container, acc=0):
 
 <table width="100%" style="font-size: 12pt;">
 
-<tr><td style="vertical-align: top; width: 52%;">
+<tr><td style="vertical-align: top; width: 45%;">
 
 <div class="code-container">
 
-<a href="https://pythontutor.com/visualize.html#code=import%20math%0A%0Adef%20first_sqrt%28nums%29%3A%0A%20%20%20%20num%20%3D%20None%0A%20%20%20%20while%20%28%0A%20%20%20%20%20%20%20%20nums%0A%20%20%20%20%20%20%20%20and%20not%20math.sqrt%28num%20%3A%3D%20nums%5B0%5D%29.is_integer%28%29%0A%20%20%20%20%29%3A%0A%20%20%20%20%20%20%20%20nums%20%3D%20nums%5B1%3A%5D%0A%20%20%20%20return%20num%0A%20%20%20%20%0Aprint%28first_sqrt%28range%2810%2C26%29%29%29&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a>
+<a href="https://pythontutor.com/visualize.html#code=def%20are_all_evens%28nums%29%3A%0A%20%20%20%20match%20nums%3A%0A%20%20%20%20%20%20%20%20case%20%5B%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20case%20%5Bnum,%20*nums%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%28num%20%25%202%20%3D%3D%200%29%20and%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20are_all_evens%28nums%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%0Aprint%28are_all_evens%28%5B2,4,6,8%5D%29%29%0Aprint%28are_all_evens%28%5B2,4,5,6,8%5D%29%29%0A&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a>
 
-<div style="background: #2b2d33; text-align: left; font-family: Consolas; font-size: 9pt;">
+<div style="background: #2b2d33; text-align: left; font-family: Consolas; font-size: 15pt;">
 
-def first_sqrt(nums):
-&nbsp;&nbsp;&nbsp;&nbsp;num = None
-&nbsp;&nbsp;&nbsp;&nbsp;while (
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nums
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and not math.sqrt(num := nums[0]).is_integer()
-&nbsp;&nbsp;&nbsp;&nbsp;):
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nums = nums[1:]
-&nbsp;&nbsp;&nbsp;&nbsp;return num
+def are_all_evens(nums):
+&nbsp;&nbsp;&nbsp;&nbsp;even_so_far = True
+&nbsp;&nbsp;&nbsp;&nbsp;while even_so_far and nums:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num, *nums = nums
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;even_so_far &= num %2 == 0
+&nbsp;&nbsp;&nbsp;&nbsp;return even_so_far
 
 </div>
 
@@ -294,61 +291,18 @@ def first_sqrt(nums):
 
 <div class="code-container">
 
-<a href="https://pythontutor.com/visualize.html#code=import%20math%0A%0Adef%20first_sqrt%28nums%29%3A%0A%20%20%20%20if%20not%20nums%3A%0A%20%20%20%20%20%20%20%20return%20None%0A%20%20%20%20num%2C%20%2Anums%20%3D%20nums%0A%20%20%20%20if%20math.sqrt%28num%29.is_integer%28%29%3A%0A%20%20%20%20%20%20%20%20return%20num%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20return%20first_sqrt%28nums%29%0A%20%20%20%20%20%20%20%20%0Aprint%28first_sqrt%28range%2810%2C26%29%29%29&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a>
+<a href="https://pythontutor.com/visualize.html#code=def%20are_all_evens%28nums%29%3A%0A%20%20%20%20even_so_far%20%3D%20True%0A%20%20%20%20while%20even_so_far%20and%20nums%3A%0A%20%20%20%20%20%20%20%20num,%20*nums%20%3D%20nums%0A%20%20%20%20%20%20%20%20even_so_far%20%26%3D%20num%20%25%202%20%3D%3D%200%0A%20%20%20%20return%20even_so_far%0A%20%20%20%20%0Aprint%28are_all_evens%28%5B2,4,6,8%5D%29%29%0Aprint%28are_all_evens%28%5B2,4,5,6,8%5D%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a>
 
-<div style="background: #2b2d33; text-align: left; font-family: Consolas; font-size: 9pt;">
+<div style="background: #2b2d33; text-align: left; font-family: Consolas; font-size:15pt;">
 
-def first_sqrt(nums):
-&nbsp;&nbsp;&nbsp;&nbsp;if not nums:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None
-&nbsp;&nbsp;&nbsp;&nbsp;num, *nums = nums
-&nbsp;&nbsp;&nbsp;&nbsp;if math.sqrt(num).is_integer():
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return num
-&nbsp;&nbsp;&nbsp;&nbsp;else:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return first_sqrt(nums)
-
-</div>
-
-</div>
-
-</td></tr>
-<tr><td style="vertical-align: top;">
-
-<div class="code-container">
-
-<a href="https://pythontutor.com/visualize.html#code=import%20math%0A%0Adef%20first_sqrt%28nums%29%3A%0A%20%20%20%20return%20next%28%0A%20%20%20%20%20%20%20%20%28num%0A%20%20%20%20%20%20%20%20%20for%20num%20in%20nums%0A%20%20%20%20%20%20%20%20%20if%20math.sqrt%28num%29.is_integer%28%29%0A%20%20%20%20%20%20%20%20%29%2C%0A%20%20%20%20%20%20%20%20None%0A%20%20%20%20%29%0A%20%20%20%20%0Aprint%28first_sqrt%28range%2810%2C26%29%29%29&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a>
-
-<div style="background: #2b2d33; text-align: left; font-family: Consolas; font-size: 9pt;">
-
-def first_sqrt(nums):
-&nbsp;&nbsp;&nbsp;&nbsp;return next(
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(num
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for num in nums
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if math.sqrt(num).is_integer()
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None
-&nbsp;&nbsp;&nbsp;&nbsp;)
-
-</div>
-
-</div>
-
-</td><td style="vertical-align: top;">
-
-<div class="code-container">
-
-<a href="https://pythontutor.com/visualize.html#code=import%20math%0A%0Adef%20first_sqrt%28nums%29%3A%0A%20%20%20%20match%20nums%3A%0A%20%20%20%20%20%20%20%20case%20%5B%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20None%0A%20%20%20%20%20%20%20%20case%20%5Bnum%2C%20%2A_%5D%20if%20math.sqrt%28num%29.is_integer%28%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20num%0A%20%20%20%20%20%20%20%20case%20%5B_%2C%20%2Anums%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20first_sqrt%28nums%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%0Aprint%28first_sqrt%28range%2810%2C%2026%29%29%29&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a>
-
-<div style="background: #2b2d33; text-align: left; font-family: Consolas; font-size: 9pt;">
-
-def first_sqrt(nums):
+def are_all_evens(nums):
 &nbsp;&nbsp;&nbsp;&nbsp;match nums:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case []:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return None
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case [num, *&#95;] if math.sqrt(num).is&#95;integer():
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return num
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case [&#95;, *nums]:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return first_sqrt(nums)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return True
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case [num, *&lowbar;] if num % 2 != 0:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case [&lowbar;, *nums]:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return are_all_evens(nums)
 
 </div>
 
@@ -374,7 +328,7 @@ def first_sqrt(nums):
 
 <p align="left">Use <tt>while</tt> when:</p>
 
-> You are check a condition or state. You should be acting while the condition is unchanged. You are done when the condition changes.
+> You are checking a condition or state. You should be acting while the condition is unchanged. You are done when the condition changes.
 
 <br/>
 
