@@ -942,23 +942,23 @@ code {
 " lang="en-US" class="invert" data-marpit-pagination="10" style="--class:invert;--paginate:true;--theme:uncover;--style:@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css'
 ;" data-marpit-pagination-total="13" data-size="16:9">
 <h3 id="2-implementations-of-conditional">2 Implementations of Conditional</h3>
-<img src="conditional.png" width="400" />
+<img src="conditional.png" width="500" />
 <table width="100%" style="font-size: 12pt;">
 <tr><td style="vertical-align: top; width: 45%;">
 <div class="code-container">
-<p><a href="https://pythontutor.com/visualize.html#code=def%20are_all_evens%28nums%29%3A%0A%20%20%20%20match%20nums%3A%0A%20%20%20%20%20%20%20%20case%20%5B%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20case%20%5Bnum,%20*nums%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%28num%20%25%202%20%3D%3D%200%29%20and%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20are_all_evens%28nums%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%0Aprint%28are_all_evens%28%5B2,4,6,8%5D%29%29%0Aprint%28are_all_evens%28%5B2,4,5,6,8%5D%29%29%0A&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a></p>
+<p><a href="https://pythontutor.com/visualize.html#code=def%20are_all_evens%28nums%29%3A%0A%20%20%20%20even_so_far%20%3D%20True%0A%20%20%20%20while%20even_so_far%20and%20nums%3A%0A%20%20%20%20%20%20%20%20num,%20*nums%20%3D%20nums%0A%20%20%20%20%20%20%20%20even_so_far%20%26%3D%20num%20%25%202%20%3D%3D%200%0A%20%20%20%20return%20even_so_far%0A%20%20%20%20%0Aprint%28are_all_evens%28%5B2,4,6,8%5D%29%29%0Aprint%28are_all_evens%28%5B2,4,5,6,8%5D%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a></p>
 <div style="background: #2b2d33; text-align: left; font-family: Consolas; font-size: 15pt;">
 <p>def are_all_evens(nums):<br />
     even_so_far = True<br />
     while even_so_far and nums:<br />
         num, *nums = nums<br />
-        even_so_far &amp;= num %2 == 0<br />
+        even_so_far &amp;= num % 2 == 0<br />
     return even_so_far</p>
 </div>
 </div>
 </td><td style="vertical-align: top;">
 <div class="code-container">
-<p><a href="https://pythontutor.com/visualize.html#code=def%20are_all_evens%28nums%29%3A%0A%20%20%20%20even_so_far%20%3D%20True%0A%20%20%20%20while%20even_so_far%20and%20nums%3A%0A%20%20%20%20%20%20%20%20num,%20*nums%20%3D%20nums%0A%20%20%20%20%20%20%20%20even_so_far%20%26%3D%20num%20%25%202%20%3D%3D%200%0A%20%20%20%20return%20even_so_far%0A%20%20%20%20%0Aprint%28are_all_evens%28%5B2,4,6,8%5D%29%29%0Aprint%28are_all_evens%28%5B2,4,5,6,8%5D%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a></p>
+<p><a href="https://pythontutor.com/visualize.html#code=def%20are_all_evens%28nums%29%3A%0A%20%20%20%20match%20nums%3A%0A%20%20%20%20%20%20%20%20case%20%5B%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20case%20%5Bnum,%20*nums%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%28num%20%25%202%20%3D%3D%200%29%20and%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20are_all_evens%28nums%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%0Aprint%28are_all_evens%28%5B2,4,6,8%5D%29%29%0Aprint%28are_all_evens%28%5B2,4,5,6,8%5D%29%29%0A&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a></p>
 <div style="background: #2b2d33; text-align: left; font-family: Consolas; font-size:15pt;">
 <p>def are_all_evens(nums):<br />
     match nums:<br />
@@ -1149,7 +1149,7 @@ code {
 <br />
 <p align="left">Use <tt>while</tt> when:</p>
 <blockquote>
-<p>You are check a condition or state. You should be acting while the condition is unchanged. You are done when the condition changes.</p>
+<p>You are checking a condition or state. You should be acting while the condition is unchanged. You are done when the condition changes.</p>
 </blockquote>
 <br />
 <p><a style="font-size: 20pt;" href="claude-report-from-discussion.pdf">Claude's Report of Our Conversation</a></p>
