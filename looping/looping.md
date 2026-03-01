@@ -264,7 +264,7 @@ def process(container, acc=0):
 
 ### 2 Implementations of Conditional
 
-<img src="conditional.png" width="400" />
+<img src="conditional.png" width="500" />
 
 <table width="100%" style="font-size: 12pt;">
 
@@ -272,7 +272,7 @@ def process(container, acc=0):
 
 <div class="code-container">
 
-<a href="https://pythontutor.com/visualize.html#code=def%20are_all_evens%28nums%29%3A%0A%20%20%20%20match%20nums%3A%0A%20%20%20%20%20%20%20%20case%20%5B%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20case%20%5Bnum,%20*nums%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%28num%20%25%202%20%3D%3D%200%29%20and%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20are_all_evens%28nums%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%0Aprint%28are_all_evens%28%5B2,4,6,8%5D%29%29%0Aprint%28are_all_evens%28%5B2,4,5,6,8%5D%29%29%0A&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a>
+<a href="https://pythontutor.com/visualize.html#code=def%20are_all_evens%28nums%29%3A%0A%20%20%20%20even_so_far%20%3D%20True%0A%20%20%20%20while%20even_so_far%20and%20nums%3A%0A%20%20%20%20%20%20%20%20num,%20*nums%20%3D%20nums%0A%20%20%20%20%20%20%20%20even_so_far%20%26%3D%20num%20%25%202%20%3D%3D%200%0A%20%20%20%20return%20even_so_far%0A%20%20%20%20%0Aprint%28are_all_evens%28%5B2,4,6,8%5D%29%29%0Aprint%28are_all_evens%28%5B2,4,5,6,8%5D%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a>
 
 <div style="background: #2b2d33; text-align: left; font-family: Consolas; font-size: 15pt;">
 
@@ -280,7 +280,7 @@ def are_all_evens(nums):
 &nbsp;&nbsp;&nbsp;&nbsp;even_so_far = True
 &nbsp;&nbsp;&nbsp;&nbsp;while even_so_far and nums:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num, *nums = nums
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;even_so_far &= num %2 == 0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;even_so_far &= num % 2 == 0
 &nbsp;&nbsp;&nbsp;&nbsp;return even_so_far
 
 </div>
@@ -291,7 +291,7 @@ def are_all_evens(nums):
 
 <div class="code-container">
 
-<a href="https://pythontutor.com/visualize.html#code=def%20are_all_evens%28nums%29%3A%0A%20%20%20%20even_so_far%20%3D%20True%0A%20%20%20%20while%20even_so_far%20and%20nums%3A%0A%20%20%20%20%20%20%20%20num,%20*nums%20%3D%20nums%0A%20%20%20%20%20%20%20%20even_so_far%20%26%3D%20num%20%25%202%20%3D%3D%200%0A%20%20%20%20return%20even_so_far%0A%20%20%20%20%0Aprint%28are_all_evens%28%5B2,4,6,8%5D%29%29%0Aprint%28are_all_evens%28%5B2,4,5,6,8%5D%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a>
+<a href="https://pythontutor.com/visualize.html#code=def%20are_all_evens%28nums%29%3A%0A%20%20%20%20match%20nums%3A%0A%20%20%20%20%20%20%20%20case%20%5B%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20case%20%5Bnum,%20*nums%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%28num%20%25%202%20%3D%3D%200%29%20and%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20are_all_evens%28nums%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%0Aprint%28are_all_evens%28%5B2,4,6,8%5D%29%29%0Aprint%28are_all_evens%28%5B2,4,5,6,8%5D%29%29%0A&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" class="run-icon" target="_blank"><i class="fa-solid fa-person-running"></i></a>
 
 <div style="background: #2b2d33; text-align: left; font-family: Consolas; font-size:15pt;">
 
