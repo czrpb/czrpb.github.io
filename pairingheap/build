@@ -1,0 +1,4 @@
+#!/usr/bin/fish
+
+marp --html pairingheap.md -o pairingheap.html
+cp -v pairingheap.html ../docs/prog-lang/pairingheap/

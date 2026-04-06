@@ -5,5 +5,5 @@
 ### Presentations
 
 * Decorators - [Decorators 101](decorators/dec101.html) [Decorators 102](decorators/dec102.html)
-* Pairing Heap - [Pairing Heap](pairing-heap/pairing-heap.html)
+* Pairing Heap - [Pairing Heap](pairingheap/pairingheap.html)
 * Looping - [Looping Is Easy](looping/looping.html)
