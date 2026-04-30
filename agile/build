@@ -1,0 +1,35 @@
+#!/bin/fish
+
+rm *~
+
+echo ""
+
+echo "Generate MARP files...."
+for f in agile safe scrum
+    echo marp --html $f.md -o ../docs/agile/$f.html
+    marp --html --allow-local-files $f.md -o $f.pdf
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$f-shrunk.pdf $f.pdf
+    eza -l $f*.pdf
+    mv $f-shrunk.pdf $f.pdf
+    marp --html $f.md -o ../docs/agile/$f.html
+end
+echo ""
+
+echo "Moving PNGs...."
+cp -v *.png ../docs/agile/
+echo ""
+
+echo "Moving PDFs...."
+cp -v *.pdf ../docs/agile/
+echo ""
+
+echo "Moving other files...."
+cp -v *.png ../docs/agile/
+cp -v *.pdf ../docs/agile/
+cp -v *.csv ../docs/agile/
+cp -v *.py ../docs/agile/
+cp -v *.js ../docs/agile/
+echo ""
+
+echo "tar up files...."
+tar vzcf ml.tar.gz build *.md *.png *.py *.csv
