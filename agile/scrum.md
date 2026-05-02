@@ -178,3 +178,49 @@ https://www.scrum.org/learning-series/what-is-scrum/
 </script>
 
 ---
+
+## Overview
+
+<div style="display: inline-block; background: white; padding: 2px;">
+<img src="scrum-framework-9.29.23.png">
+</div>
+
+---
+
+## Roles, Artifacts, Ceremonies
+
+<table>
+    <tr>
+        <th>Roles</th>
+        <td>Product Owner</td>
+        <td>Scrum Master</td>
+        <td>Developer</td>
+    </tr>
+    <tr>
+        <th>Artifacts</th>
+        <td>Work Item</td>
+        <td>Product Backlog</td>
+        <td>Sprint Backlog</td>
+    </tr>
+    <tr>
+        <th>Ceremonies</th>
+        <td>Sprint Planning</td>
+        <td>Daily Scrum</td>
+        <td>Sprint Review</td>
+        <td>Sprint Retrospective</td>
+    </tr>
+</table>
+
+---
+
+## Planning
+
+---
+
+## Executing
+
+---
+
+## Reviewing
+
+---
