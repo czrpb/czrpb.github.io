@@ -168,9 +168,11 @@ style: |
 
 # What is Scrum?
 
-https://www.scrum.org/learning-series/what-is-scrum/
-
 #### Quentin Crain
+
+https://scrumguides.org/scrum-guide.html
+
+https://www.scrum.org/learning-series/what-is-scrum/
 
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
@@ -187,40 +189,78 @@ https://www.scrum.org/learning-series/what-is-scrum/
 
 ---
 
-## Roles, Artifacts, Ceremonies
+## Roles
+
+<!--
+Value to Stakeholders
+Value to Team
+-->
 
 <table>
     <tr>
-        <th>Roles</th>
-        <td>Product Owner</td>
-        <td>Scrum Master</td>
-        <td>Developer</td>
+        <th>Product Owner</th>
+        <th>Scrum Master</th>
+        <th>Developer</th>
     </tr>
     <tr>
-        <th>Artifacts</th>
-        <td>Work Item</td>
-        <td>Product Backlog</td>
-        <td>Sprint Backlog</td>
-    </tr>
-    <tr>
-        <th>Ceremonies</th>
-        <td>Sprint Planning</td>
-        <td>Daily Scrum</td>
-        <td>Sprint Review</td>
-        <td>Sprint Retrospective</td>
+        <td>
+            <img src="scrum-product-owner-stances.png" width="225" />
+            <img data-marpit-fragment src="Office-Space-Quotes-People-Skills.jpg" width="300" />
+        </td>
+        <td>
+            <img src="scrum-scrummaster-stances.png" width="300" />
+            <img data-marpit-fragment src="office-space-lumberg.jpg" width="300" />
+        </td>
+        <td>
+            <img data-marpit-fragment src="office-space-developers.jpg" width="300" />
+        </td>
     </tr>
 </table>
 
 ---
 
-## Planning
+## Artifacts
+
+<table>
+    <tr>
+        <th>Product Backlog</th>
+        <th>Sprint Backlog</th>
+        <th>Work Item</th>
+    </tr>
+    <tr>
+        <td>ordered list of what is needed to improve the product</td>
+        <td>work committed by the developers to the PO in a timeframe</td>
+        <td>work in the sprint</td>
+    </tr>
+</table>
 
 ---
 
-## Executing
+## Ceremonies
+
+<table>
+    <tr>
+        <th>Sprint Planning</th>
+        <th>Daily Scrum</th>
+        <th>Sprint Review</th>
+        <th>Sprint Retrospective</th>
+    </tr>
+    <tr>
+        <td>Build sprint backlog</td>
+        <td>Review sprint progress</td>
+        <td>Review work completed with Stakeholders</td>
+        <td>Review sprint effectiveness and make change</td>
+    </tr>
+</table>
 
 ---
 
-## Reviewing
+## Guidance
+
+At the start of the sprint, you commit to the Customer to deliver items A, B, C of value.
+
+At the Sprint Review, you demo to the Customer what you finished.
 
 ---
+
+# E   N   D
