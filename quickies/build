@@ -1,0 +1,34 @@
+#!/bin/fish
+
+rm *~
+
+echo ""
+
+echo "Generate MARP files ...."
+for f in observability testability
+    echo marp --html $f.md -o ../docs/quickies/$f.html
+    marp --html --allow-local-files $f.md -o $f.pdf
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$f-shrunk.pdf $f.pdf
+    eza -l $f*.pdf
+    mv $f-shrunk.pdf $f.pdf
+    marp --html $f.md -o ../docs/quickies/$f.html
+end
+echo ""
+
+echo "Moving images ...."
+cp -v *.png *.jpg ../docs/quickies/
+echo ""
+
+echo "Moving PDFs ...."
+cp -v *.pdf ../docs/quickies/
+echo ""
+
+echo "Moving other files ...."
+cp -v *.pdf ../docs/quickies/
+cp -v *.csv ../docs/quickies/
+cp -v *.py ../docs/quickies/
+cp -v *.js ../docs/quickies/
+echo ""
+
+echo "tar up files...."
+tar vzcf ml.tar.gz build *.md *.png *.py *.csv
