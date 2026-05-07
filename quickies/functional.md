@@ -231,7 +231,7 @@ return new_nums
 
 ---
 
-`3,` is added cognitive load in `add(3, num)`, lets get rid of it!
+`3,` is invariant and is added cognitive load in `add(3, num)`, lets get rid of it!
 
 <br/>
 
@@ -293,7 +293,7 @@ return new_nums
 
 ---
 
-Simple `for` loops should be list comprehensions.
+The condition `num != 7` is invariant so lets make it a function.
 
 <br/>
 
@@ -332,14 +332,21 @@ return new_nums
 
 ```python
 import functools
+!import operator
 
 def add(a, b):
     return a + b
 add_3 = functools.partial(add, 3)
 
+!ne_7 = functools.partial(operator.ne, 7)
+
 nums = [4, 2, 7, 22]
 
-!new_nums = [add_3(num) for num in nums if num != 7]
+new_nums = []
+
+for num in nums:
+!    if ne_7(num):
+        new_nums.append(add_3(num))
 
 return new_nums
 ```
@@ -354,7 +361,7 @@ return new_nums
 
 ---
 
-Make condition a function.
+Simple `for` loops should be list comprehensions.
 
 <br/>
 
@@ -371,14 +378,21 @@ Make condition a function.
 
 ```python
 import functools
+import operator
 
 def add(a, b):
     return a + b
 add_3 = functools.partial(add, 3)
 
+ne_7 = functools.partial(operator.ne, 7)
+
 nums = [4, 2, 7, 22]
 
-new_nums = [add_3(num) for num in nums if num != 7]
+new_nums = []
+
+for num in nums:
+    if ne_7(num):
+        new_nums.append(add_3(num))
 
 return new_nums
 ```
@@ -389,13 +403,13 @@ return new_nums
 
 ```python
 import functools
-!import operator
+import operator
 
 def add(a, b):
     return a + b
 add_3 = functools.partial(add, 3)
 
-!ne_7 = functools.partial(operator.ne, 7)
+ne_7 = functools.partial(operator.ne, 7)
 
 nums = [4, 2, 7, 22]
 
@@ -412,9 +426,11 @@ return new_nums
 
 </table>
 
+(This is probably where we stop with Python, but ...)
+
 ---
 
-The list comprehension is a `filter` then a `map`.
+Even explicit looping over `nums` and specifying `num` are invariants, so lets use `filter` then `map`.
 
 <table width="100%">
 
@@ -477,7 +493,74 @@ return new_nums
 
 ---
 
-Explicit looping is gone, loops are "higher-order" concepts of `map`, `filter` (and `reduce`).
+Curry & Compose!
+
+<table width="100%">
+
+<tr>
+    <th width="50%">Before</th>
+    <th width="50%">After</th>
+</tr>
+
+<tr>
+
+<td>
+
+```python
+import functools
+import operator
+
+def add(a, b):
+    return a + b
+add_3 = functools.partial(add, 3)
+
+ne_7 = functools.partial(operator.ne, 7)
+
+nums = [4, 2, 7, 22]
+
+nums_without_7 = filter(ne_7, nums)
+
+new_nums = map(add_3, nums_without_7)
+
+return new_nums
+```
+
+</td><td>
+
+<span data-marpit-fragment>
+
+```python
+import functools
+import operator
+
+def add(a, b):
+    return a + b
+add_3 = functools.partial(add, 3)
+
+ne_7 = functools.partial(operator.ne, 7)
+
+!filter_ne_7 = functools.partial(filter, ne_7)
+!map_add_3 = functools.partial(map, add_3)
+!filter_ne_7_then_map_add_3 = lambda ns: map_add_3(filter_ne_7(ns))
+
+nums = [4, 2, 7, 22]
+
+new_nums = filter_ne_7_then_map_add_3(nums)
+
+return new_nums
+```
+
+</span>
+
+</td>
+
+</tr>
+
+</table>
+
+---
+
+Explicit looping is gone, curry & compose, "higher-order" concepts of `map`, `filter`.
 
 <table width="100%">
 
@@ -518,12 +601,14 @@ def add(a, b):
 add_3 = functools.partial(add, 3)
 
 ne_7 = functools.partial(operator.ne, 7)
-    
+
+filter_ne_7 = functools.partial(filter, ne_7)
+map_add_3 = functools.partial(map, add_3)
+filter_ne_7_then_map_add_3 = lambda ns: map_add_3(filter_ne_7(ns))
+
 nums = [4, 2, 7, 22]
 
-nums_without_7 = filter(ne_7, nums)
-
-new_nums = map(add_3, nums_without_7)
+new_nums = filter_ne_7_then_map_add_3(nums)
 
 return new_nums
 ```
@@ -610,6 +695,7 @@ iex> nums
         (filter-ne-7-then-map-add-3 (compose map-add-3 filter-ne-7))]
     (filter-ne-7-then-map-add-3 nums)
     )
+'(7 5 25)
 ```
 
 </td>
