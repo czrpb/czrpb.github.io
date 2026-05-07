@@ -16,7 +16,7 @@ end
 echo ""
 
 echo "Moving images ...."
-cp -v *.png *.jpg ../docs/quickies/
+cp -v *.jpg ../docs/quickies/
 echo ""
 
 echo "Moving PDFs ...."
@@ -31,4 +31,4 @@ cp -v *.js ../docs/quickies/
 echo ""
 
 echo "tar up files...."
-tar vzcf ml.tar.gz build *.md *.png *.py *.csv
+tar vzcf ml.tar.gz build *.md *.png *.jpg *.py *.csv

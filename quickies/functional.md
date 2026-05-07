@@ -538,6 +538,20 @@ return new_nums
 
 ---
 
+**`map`, `filter`, `reduce`**
+
+<img src="map-filter-reduce.jpg" width="350" />
+
+**Curry (`partial`)**
+
+https://en.wikipedia.org/wiki/Currying
+
+**(Function) Composition**
+
+https://en.wikipedia.org/wiki/Function_composition_(computer_science)
+
+---
+
 # COMMENTS
 
 # QUESTIONS
