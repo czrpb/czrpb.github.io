@@ -5,7 +5,7 @@ rm *~
 echo ""
 
 echo "Generate MARP files ...."
-for f in observability testability
+for f in observability testability functional
     echo marp --html $f.md -o ../docs/quickies/$f.html
     marp --html --allow-local-files $f.md -o $f.pdf
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$f-shrunk.pdf $f.pdf
