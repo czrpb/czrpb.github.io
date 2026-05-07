@@ -207,16 +207,13 @@ nums = [4, 2, 7, 22]
 <span data-marpit-fragment>
 
 ```python
-def add(a, b):
-    return a + b
-
 nums = [4, 2, 7, 22]
 
 new_nums = []
 
 for num in nums:
     if num != 7:
-        new_nums.append(add(3, num))
+        new_nums.append(num + 3)
 
 return new_nums
 ```
@@ -231,7 +228,7 @@ return new_nums
 
 ---
 
-`3,` is invariant and is added cognitive load in `add(3, num)`, lets get rid of it!
+Prefer functions!
 
 <br/>
 
@@ -247,16 +244,13 @@ return new_nums
 <td>
 
 ```python
-def add(a, b):
-    return a + b
-
 nums = [4, 2, 7, 22]
 
 new_nums = []
 
 for num in nums:
     if num != 7:
-        new_nums.append(add(3, num))
+        new_nums.append(num + 3)
 
 return new_nums
 ```
@@ -266,18 +260,18 @@ return new_nums
 <span data-marpit-fragment>
 
 ```python
+!import operator
 !import functools
 
-def add(a, b):
-    return a + b
-!add_3 = functools.partial(add, 3)
+!add_3 = functools.partial(operator.add, 3)
+!ne_7 = functools.partial(operator.ne, 7)
 
 nums = [4, 2, 7, 22]
 
 new_nums = []
 
 for num in nums:
-    if num != 7:
+!    if ne_7(num):
 !        new_nums.append(add_3(num))
 
 return new_nums
@@ -293,7 +287,7 @@ return new_nums
 
 ---
 
-The condition `num != 7` is invariant so lets make it a function.
+Prefer list comprehension!
 
 <br/>
 
@@ -309,81 +303,10 @@ The condition `num != 7` is invariant so lets make it a function.
 <td>
 
 ```python
-import functools
-
-def add(a, b):
-    return a + b
-add_3 = functools.partial(add, 3)
-
-nums = [4, 2, 7, 22]
-
-new_nums = []
-
-for num in nums:
-    if num != 7:
-        new_nums.append(add_3(num))
-
-return new_nums
-```
-
-</td><td>
-
-<span data-marpit-fragment>
-
-```python
-import functools
-!import operator
-
-def add(a, b):
-    return a + b
-add_3 = functools.partial(add, 3)
-
-!ne_7 = functools.partial(operator.ne, 7)
-
-nums = [4, 2, 7, 22]
-
-new_nums = []
-
-for num in nums:
-!    if ne_7(num):
-        new_nums.append(add_3(num))
-
-return new_nums
-```
-
-</span>
-
-</td>
-
-</tr>
-
-</table>
-
----
-
-Simple `for` loops should be list comprehensions.
-
-<br/>
-
-<table width="100%">
-
-<tr>
-    <th width="50%">Before</th>
-    <th width="50%">After</th>
-</tr>
-
-<tr>
-
-<td>
-
-```python
-import functools
 import operator
+import functools
 
-def add(a, b):
-    return a + b
-add_3 = functools.partial(add, 3)
-
+add_3 = functools.partial(operator.add, 3)
 ne_7 = functools.partial(operator.ne, 7)
 
 nums = [4, 2, 7, 22]
@@ -402,16 +325,15 @@ return new_nums
 <span data-marpit-fragment>
 
 ```python
-import functools
 import operator
+import functools
 
-def add(a, b):
-    return a + b
-add_3 = functools.partial(add, 3)
-
+add_3 = functools.partial(operator.add, 3)
 ne_7 = functools.partial(operator.ne, 7)
 
 nums = [4, 2, 7, 22]
+
+new_nums = []
 
 !new_nums = [add_3(num) for num in nums if ne_7(num)]
 
@@ -426,11 +348,15 @@ return new_nums
 
 </table>
 
+<span data-marpit-fragment>
+
 (This is probably where we stop with Python, but ...)
+
+</span>
 
 ---
 
-Even explicit looping over `nums` and specifying `num` are invariants, so lets use `filter` then `map`.
+Prefer functions!
 
 <table width="100%">
 
@@ -444,13 +370,10 @@ Even explicit looping over `nums` and specifying `num` are invariants, so lets u
 <td>
 
 ```python
-import functools
 import operator
+import functools
 
-def add(a, b):
-    return a + b
-add_3 = functools.partial(add, 3)
-
+add_3 = functools.partial(operator.add, 3)
 ne_7 = functools.partial(operator.ne, 7)
 
 nums = [4, 2, 7, 22]
@@ -465,13 +388,10 @@ return new_nums
 <span data-marpit-fragment>
 
 ```python
-import functools
 import operator
+import functools
 
-def add(a, b):
-    return a + b
-add_3 = functools.partial(add, 3)
-
+add_3 = functools.partial(operator.add, 3)
 ne_7 = functools.partial(operator.ne, 7)
 
 nums = [4, 2, 7, 22]
@@ -493,7 +413,7 @@ return new_nums
 
 ---
 
-Curry & Compose!
+Prefer functions!
 
 <table width="100%">
 
@@ -507,13 +427,10 @@ Curry & Compose!
 <td>
 
 ```python
-import functools
 import operator
+import functools
 
-def add(a, b):
-    return a + b
-add_3 = functools.partial(add, 3)
-
+add_3 = functools.partial(operator.add, 3)
 ne_7 = functools.partial(operator.ne, 7)
 
 nums = [4, 2, 7, 22]
@@ -530,13 +447,10 @@ return new_nums
 <span data-marpit-fragment>
 
 ```python
-import functools
 import operator
+import functools
 
-def add(a, b):
-    return a + b
-add_3 = functools.partial(add, 3)
-
+add_3 = functools.partial(operator.add, 3)
 ne_7 = functools.partial(operator.ne, 7)
 
 !filter_ne_7 = functools.partial(filter, ne_7)
@@ -545,7 +459,7 @@ ne_7 = functools.partial(operator.ne, 7)
 
 nums = [4, 2, 7, 22]
 
-new_nums = filter_ne_7_then_map_add_3(nums)
+!new_nums = filter_ne_7_then_map_add_3(nums)
 
 return new_nums
 ```
@@ -574,16 +488,13 @@ Explicit looping is gone, curry & compose, "higher-order" concepts of `map`, `fi
 <td>
 
 ```python
-def add(a, b):
-    return a + b
-
 nums = [4, 2, 7, 22]
 
 new_nums = []
 
 for num in nums:
     if num != 7:
-        new_nums.append(add(3, num))
+        new_nums.append(num + 3)
 
 return new_nums
 ```
@@ -593,13 +504,10 @@ return new_nums
 <span data-marpit-fragment>
 
 ```python
-import functools
 import operator
+import functools
 
-def add(a, b):
-    return a + b
-add_3 = functools.partial(add, 3)
-
+add_3 = functools.partial(operator.add, 3)
 ne_7 = functools.partial(operator.ne, 7)
 
 filter_ne_7 = functools.partial(filter, ne_7)
