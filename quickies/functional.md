@@ -202,9 +202,9 @@ New list where each number in `nums` except 7, which is thrown out, is increment
 nums = [4, 2, 7, 22]
 ```
 
-</td>
+</td><td>
 
-<td>
+<span data-marpit-fragment>
 
 ```python
 def add(a, b):
@@ -220,6 +220,8 @@ for num in nums:
 
 return new_nums
 ```
+
+</span>
 
 </td>
 
@@ -259,9 +261,9 @@ for num in nums:
 return new_nums
 ```
 
-</td>
+</td><td>
 
-<td>
+<span data-marpit-fragment>
 
 ```python
 !import functools
@@ -280,6 +282,8 @@ for num in nums:
 
 return new_nums
 ```
+
+</span>
 
 </td>
 
@@ -322,9 +326,9 @@ for num in nums:
 return new_nums
 ```
 
-</td>
+</td><td>
 
-<td>
+<span data-marpit-fragment>
 
 ```python
 import functools
@@ -339,6 +343,8 @@ nums = [4, 2, 7, 22]
 
 return new_nums
 ```
+
+</span>
 
 </td>
 
@@ -377,9 +383,9 @@ new_nums = [add_3(num) for num in nums if num != 7]
 return new_nums
 ```
 
-</td>
+</td><td>
 
-<td>
+<span data-marpit-fragment>
 
 ```python
 import functools
@@ -397,6 +403,8 @@ nums = [4, 2, 7, 22]
 
 return new_nums
 ```
+
+</span>
 
 </td>
 
@@ -436,9 +444,9 @@ new_nums = [add_3(num) for num in nums if ne_7(num)]
 return new_nums
 ```
 
-</td>
+</td><td>
 
-<td>
+<span data-marpit-fragment>
 
 ```python
 import functools
@@ -458,6 +466,8 @@ nums = [4, 2, 7, 22]
 
 return new_nums
 ```
+
+</span>
 
 </td>
 
@@ -495,9 +505,9 @@ for num in nums:
 return new_nums
 ```
 
-</td>
+</td><td>
 
-<td>
+<span data-marpit-fragment>
 
 ```python
 import functools
@@ -517,6 +527,8 @@ new_nums = map(add_3, nums_without_7)
 
 return new_nums
 ```
+
+</span>
 
 </td>
 
@@ -576,7 +588,7 @@ iex> nums
 '(7 5 25)
 
 ; absurd, or is it??!?
-(let* [(nums '(4 2 7 22))
+> (let* [(nums '(4 2 7 22))
         (add-3 (curry + 3))
         (map-add-3 (curry map add-3))
         (ne-7 (compose not (curry = 7)))

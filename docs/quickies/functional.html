@@ -518,8 +518,8 @@ code {
 <td>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">nums = [<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">7</span>, <span class="hljs-number">22</span>]
 </code></pre>
-</td>
-<td>
+</td><td>
+<span data-marpit-fragment>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a, b</span>):
     <span class="hljs-keyword">return</span> a + b
 
@@ -533,6 +533,7 @@ new_nums = []
 
 <span class="hljs-keyword">return</span> new_nums
 </code></pre>
+</span>
 </td>
 </tr>
 </table>
@@ -718,8 +719,8 @@ new_nums = []
 
 <span class="hljs-keyword">return</span> new_nums
 </code></pre>
-</td>
-<td>
+</td><td>
+<span data-marpit-fragment>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">!<span class="hljs-keyword">import</span> functools
 
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a, b</span>):
@@ -736,6 +737,7 @@ new_nums = []
 
 <span class="hljs-keyword">return</span> new_nums
 </code></pre>
+</span>
 </td>
 </tr>
 </table>
@@ -924,8 +926,8 @@ new_nums = []
 
 <span class="hljs-keyword">return</span> new_nums
 </code></pre>
-</td>
-<td>
+</td><td>
+<span data-marpit-fragment>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">import</span> functools
 
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a, b</span>):
@@ -938,6 +940,7 @@ nums = [<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, 
 
 <span class="hljs-keyword">return</span> new_nums
 </code></pre>
+</span>
 </td>
 </tr>
 </table>
@@ -1122,8 +1125,8 @@ new_nums = [add_3(num) <span class="hljs-keyword">for</span> num <span class="hl
 
 <span class="hljs-keyword">return</span> new_nums
 </code></pre>
-</td>
-<td>
+</td><td>
+<span data-marpit-fragment>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">import</span> functools
 !<span class="hljs-keyword">import</span> operator
 
@@ -1139,6 +1142,7 @@ nums = [<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, 
 
 <span class="hljs-keyword">return</span> new_nums
 </code></pre>
+</span>
 </td>
 </tr>
 </table>
@@ -1325,8 +1329,8 @@ new_nums = [add_3(num) <span class="hljs-keyword">for</span> num <span class="hl
 
 <span class="hljs-keyword">return</span> new_nums
 </code></pre>
-</td>
-<td>
+</td><td>
+<span data-marpit-fragment>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">import</span> functools
 <span class="hljs-keyword">import</span> operator
 
@@ -1344,6 +1348,7 @@ nums = [<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, 
 
 <span class="hljs-keyword">return</span> new_nums
 </code></pre>
+</span>
 </td>
 </tr>
 </table>
@@ -1528,8 +1533,8 @@ new_nums = []
 
 <span class="hljs-keyword">return</span> new_nums
 </code></pre>
-</td>
-<td>
+</td><td>
+<span data-marpit-fragment>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">import</span> functools
 <span class="hljs-keyword">import</span> operator
 
@@ -1547,6 +1552,7 @@ new_nums = <span class="hljs-built_in">map</span>(add_3, nums_without_7)
 
 <span class="hljs-keyword">return</span> new_nums
 </code></pre>
+</span>
 </td>
 </tr>
 </table>
@@ -1905,7 +1911,7 @@ iex&gt; nums
 &#x27;(<span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-number">25</span>)
 
 <span class="hljs-comment">; absurd, or is it??!?</span>
-(<span class="hljs-name">let*</span> [(<span class="hljs-name">nums</span> &#x27;(<span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">22</span>))
+&gt; (<span class="hljs-name">let*</span> [(<span class="hljs-name">nums</span> &#x27;(<span class="hljs-number">4</span> <span class="hljs-number">2</span> <span class="hljs-number">7</span> <span class="hljs-number">22</span>))
         (<span class="hljs-name">add-3</span> (<span class="hljs-name">curry</span> + <span class="hljs-number">3</span>))
         (<span class="hljs-name">map-add-3</span> (<span class="hljs-name">curry</span> map add-3))
         (<span class="hljs-name">ne-7</span> (<span class="hljs-name">compose</span> not (<span class="hljs-name">curry</span> = <span class="hljs-number">7</span>)))
