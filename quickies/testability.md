@@ -42,7 +42,7 @@ style: |
   }
 
   blockquote {
-    font-size: 22pt;
+    font-size: 18pt;
   }
 
   footer {
