@@ -287,7 +287,7 @@ return new_nums
 
 <span data-marpit-fragment>
 
-Using curry (partial application) allowing for reuse & refactoring.
+Using currying allowing for reuse & refactoring.
 
 </span>
 
@@ -415,6 +415,12 @@ return new_nums
 
 </table>
 
+<span data-marpit-fragment>
+
+Separating in preparation for more refactoring  . . .
+
+</span>
+
 ---
 
 Prefer functions!
@@ -475,6 +481,12 @@ return new_nums
 </tr>
 
 </table>
+
+<span data-marpit-fragment>
+
+We now are living `Names++`!
+
+</span>
 
 ---
 
