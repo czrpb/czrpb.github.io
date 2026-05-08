@@ -285,6 +285,12 @@ return new_nums
 
 </table>
 
+<span data-marpit-fragment>
+
+Using curry (partial application) allowing for reuse & refactoring.
+
+</span>
+
 ---
 
 Prefer list comprehension!
@@ -333,8 +339,6 @@ ne_7 = functools.partial(operator.ne, 7)
 
 nums = [4, 2, 7, 22]
 
-new_nums = []
-
 !new_nums = [add_3(num) for num in nums if ne_7(num)]
 
 return new_nums
@@ -350,7 +354,7 @@ return new_nums
 
 <span data-marpit-fragment>
 
-(This is probably where we stop with Python, but ...)
+This is probably where we stop with Python, but ...
 
 </span>
 
